@@ -7,6 +7,9 @@ parts:
   - caption: Chapters
     numbered: 2          # chapter.section (e.g. 1.10); headings inside a section stay unnumbered
     chapters:
+      - file: human-genome/index
+      - file: genomic-data-qc/index
+      - file: read-mapping-variant-calling/index
       - file: complex-traits-gwas/index
         sections:
           - file: complex-traits-gwas/complex-disease-overview
