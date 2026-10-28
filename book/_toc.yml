@@ -10,6 +10,9 @@ parts:
       - file: human-genome/index
       - file: genomic-data-qc/index
       - file: read-mapping-variant-calling/index
+      - file: genetic-inheritance/index
+      - file: monogenic-disease/index
+      - file: clinical-genetic-testing/index
       - file: complex-traits-gwas/index
         sections:
           - file: complex-traits-gwas/complex-disease-overview
