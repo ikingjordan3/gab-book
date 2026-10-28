@@ -25,8 +25,8 @@ html:
 launch_buttons:
   notebook_interface: jupyterlab
   binderhub_url: https://mybinder.org
-  # Georgia Tech instructional JupyterHub: fill in the hub URL to get a "launch on JupyterHub" button (uses nbgitpuller)
-  # jupyterhub_url: https://<gt-instructional-hub>
+  # Georgia Tech PACE-ICE JupyterHub: fill in the hub URL to get a "launch on JupyterHub" button (uses nbgitpuller)
+  # jupyterhub_url: https://<pace-ice-hub>
 
 sphinx:
   config:

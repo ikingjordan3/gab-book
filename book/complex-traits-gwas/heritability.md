@@ -1,7 +1,7 @@
 # Heritability: definition and misconceptions
 
 ```{admonition} Module at a glance
-**Lecture:** Lecture 16 &nbsp;·&nbsp; **Prerequisite:** Fisher 1918 and the central limit theorem
+**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** Fisher 1918 and the central limit theorem
 
 **After this module you should be able to:** Define H² = V<sub>G</sub>/V<sub>P</sub> and correct common misreadings of heritability.
 ```

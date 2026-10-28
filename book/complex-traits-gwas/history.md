@@ -1,7 +1,7 @@
 # A short history of complex-disease genetics
 
 ```{admonition} Module at a glance
-**Lecture:** Lecture 16 &nbsp;·&nbsp; **Prerequisite:** The spectrum of genetic variation in disease
+**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** The spectrum of genetic variation in disease
 
 **After this module you should be able to:** Trace linkage → candidate genes → GWAS, and why each transition happened.
 ```
