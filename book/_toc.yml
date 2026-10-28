@@ -13,7 +13,6 @@ parts:
       - file: genetic-inheritance/index
       - file: monogenic-disease/index
       - file: clinical-genetic-testing/index
-      - file: genetic-epidemiology/index
       - file: complex-traits-gwas/index
         sections:
           - file: complex-traits-gwas/complex-disease-overview
@@ -31,6 +30,7 @@ parts:
           - file: complex-traits-gwas/significance-and-plots
           - file: complex-traits-gwas/lab-single-snp-association
       - file: polygenic-risk-scores/index
+      - file: cancer-genomics/index
       - file: pharmacogenomics/index
       - file: genetic-diversity-pca/index
       - file: genetic-ancestry-admixture/index
