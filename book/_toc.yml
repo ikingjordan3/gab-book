@@ -4,7 +4,8 @@ parts:
   - caption: Getting started
     chapters:
       - file: setup
-  - caption: Complex traits & GWAS (Lectures 16–17)
+  - caption: Chapters
+    numbered: 2          # chapter.section (e.g. 1.10); headings inside a section stay unnumbered
     chapters:
       - file: complex-traits-gwas/index
         sections:
