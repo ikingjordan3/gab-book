@@ -1,7 +1,7 @@
 # From heritability to GWAS
 
 ```{admonition} Module at a glance
-**Lecture:** Lecture 17 &nbsp;·&nbsp; **Prerequisite:** Heritability (Lecture 16)
+**Lecture:** Genome-wide association studies &nbsp;·&nbsp; **Prerequisite:** Heritability
 
 **After this module you should be able to:** Connect heritability to GWAS loci and the bridge to polygenic risk.
 ```

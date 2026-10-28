@@ -2,10 +2,10 @@
 
 Each chapter ends with a lab notebook (`lab-*.ipynb`). You can run them in any of three places.
 
-## 1. Georgia Tech instructional server (recommended)
+## 1. PACE-ICE, the course HPC cluster (recommended)
 
 Use the **launch** (rocket) button at the top of a lab page and choose *JupyterHub*.
-The notebook and its data are copied into your account on the course server, where Python, R, PLINK and BWA
+The notebook and its data are copied into your PACE-ICE account, where Python, R, PLINK and BWA
 are already installed. Re-launching later does not overwrite your edits.
 
 ## 2. Binder (no account needed)

@@ -1,7 +1,7 @@
 # The spectrum of genetic variation in disease
 
 ```{admonition} Module at a glance
-**Lecture:** Lecture 16 &nbsp;·&nbsp; **Prerequisite:** Mendelian disease (Lecture 15)
+**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** Rare, monogenic disease (chapter 5)
 
 **After this module you should be able to:** Contrast rare, monogenic disease with common, polygenic disease in terms of allele frequency and effect size.
 ```

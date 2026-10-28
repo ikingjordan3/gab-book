@@ -12,7 +12,7 @@ kernelspec:
 # Effect size: odds ratios and P-values
 
 ```{admonition} Module at a glance
-**Lecture:** 17 &nbsp;·&nbsp; **Prerequisite:** {doc}`case-control-design`
+**Lecture:** Genome-wide association studies &nbsp;·&nbsp; **Prerequisite:** {doc}`case-control-design`
 
 **After this module you should be able to:** compute odds, odds ratios and a χ² P-value for one SNP.
 ```
