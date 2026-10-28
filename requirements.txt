@@ -1,0 +1,6 @@
+# Packages needed to build the book (GitHub Actions and local builds). Labs use environment.yml instead.
+jupyter-book>=1.0,<2
+jupyterquiz
+numpy
+scipy
+matplotlib
