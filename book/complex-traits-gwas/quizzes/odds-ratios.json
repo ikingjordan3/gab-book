@@ -1,0 +1,71 @@
+[
+  {
+    "question": "At a SNP with alleles A and G, A is at 25% in controls. What are the odds of A in controls?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "0.33", "correct": true,
+       "feedback": "Right. Odds = freq(A) / freq(G) = 0.25 / 0.75 = 0.33."},
+      {"answer": "0.25", "correct": false,
+       "feedback": "That is the frequency (probability) of A, not its odds. Odds divide by the frequency of the other allele: 0.25 / 0.75."},
+      {"answer": "3.0", "correct": false,
+       "feedback": "That is the odds of G (0.75 / 0.25). The question asks for the odds of A."},
+      {"answer": "0.75", "correct": false,
+       "feedback": "That is the frequency of G. Odds of A = freq(A) / freq(G)."}
+    ]
+  },
+  {
+    "question": "In a case-control GWAS, allele A is at 40% in cases and 25% in controls. What is the odds ratio for A? (Give two decimal places.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 2.0, "correct": true,
+       "feedback": "Right. Odds in cases = 0.40 / 0.60 = 0.667; odds in controls = 0.25 / 0.75 = 0.333; OR = 0.667 / 0.333 = 2.00."},
+      {"type": "value", "value": 1.6, "correct": false,
+       "feedback": "That is the ratio of the frequencies (0.40 / 0.25). The OR is a ratio of odds: (0.40/0.60) / (0.25/0.75)."},
+      {"type": "value", "value": 0.5, "correct": false,
+       "feedback": "You have controls over cases. The OR puts the odds in cases on top."},
+      {"type": "default",
+       "feedback": "Compute the odds of A in each group first (freq(A) / freq(other allele)), then divide cases by controls."}
+    ]
+  },
+  {
+    "question": "A SNP has OR = 0.8 for allele T. What does this mean?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "T is less common in cases than in controls", "correct": true,
+       "feedback": "Right. OR < 1 means the odds of T are lower in cases, so T is associated with lower risk (and the other allele with higher risk)."},
+      {"answer": "T has no association with the disease", "correct": false,
+       "feedback": "No association corresponds to OR = 1. Whether 0.8 is significantly different from 1 needs a P-value."},
+      {"answer": "Carriers of T have an 80% chance of disease", "correct": false,
+       "feedback": "An odds ratio compares two groups; it is not the probability of disease for anyone."},
+      {"answer": "T is more common in cases than in controls", "correct": false,
+       "feedback": "That would give OR > 1."}
+    ]
+  },
+  {
+    "question": "In the allele-count table, why do 1,000 cases contribute 2,000 alleles?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Each person carries two copies of each autosomal SNP", "correct": true,
+       "feedback": "Right. Humans are diploid, so each person contributes one allele from each chromosome of the pair."},
+      {"answer": "Each sample is genotyped twice as a quality check", "correct": false,
+       "feedback": "Replicate genotyping is sometimes done, but replicates are not counted twice. The 2 comes from diploidy."},
+      {"answer": "Both the forward and reverse DNA strands are counted", "correct": false,
+       "feedback": "The two strands carry complementary bases at the same site, so they are one allele, not two."}
+    ]
+  },
+  {
+    "question": "Why does a GWAS usually use regression rather than the χ² test?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Regression can adjust for covariates such as age, sex and ancestry", "correct": true,
+       "feedback": "Right. The χ² test only compares allele counts; it cannot include covariates, so confounders can create false associations."},
+      {"answer": "The χ² test cannot produce a P-value", "correct": false,
+       "feedback": "It does give a P-value (here about 1 × 10⁻¹⁶). Its limitation is that it cannot include covariates."},
+      {"answer": "The χ² test only works for quantitative traits", "correct": false,
+       "feedback": "The opposite: the allele-count χ² test is for a binary (case/control) trait."},
+      {"answer": "Regression always gives smaller P-values", "correct": false,
+       "feedback": "Adjusting for confounders can make P-values larger or smaller. The point is that they become trustworthy."}
+    ]
+  }
+]

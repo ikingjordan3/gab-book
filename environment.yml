@@ -1,0 +1,24 @@
+# Environment for the lab notebooks (Binder, the course server, or a local install).
+name: gab
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - jupyterlab
+  - numpy
+  - pandas
+  - scipy
+  - statsmodels
+  - matplotlib
+  - r-base=4.3
+  - r-irkernel
+  - r-ggplot2
+  - rpy2
+  - plink
+  - bwa
+  - samtools
+  - nbgitpuller
+  - pip
+  - pip:
+      - jupyterquiz

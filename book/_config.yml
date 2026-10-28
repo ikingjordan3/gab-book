@@ -1,0 +1,35 @@
+# Jupyter Book (v1) configuration — https://jupyterbook.org/en/stable/customize/config.html
+title: Genomics & Applied Bioinformatics
+author: I. King Jordan
+copyright: "2026"
+logo: images/logo.png
+only_build_toc_files: true
+
+execute:
+  execute_notebooks: force       # re-run module pages so quizzes are freshly rendered
+  timeout: 120
+  exclude_patterns:
+    - "*lab-*.ipynb"             # lab notebooks need R/PLINK/BWA; students run them, the build does not
+
+repository:
+  url: https://github.com/ikingjordan3/gab-book
+  path_to_book: book
+  branch: main
+
+html:
+  favicon: images/favicon.png
+  use_repository_button: true
+  use_issues_button: true
+  home_page_in_navbar: false
+
+launch_buttons:
+  notebook_interface: jupyterlab
+  binderhub_url: https://mybinder.org
+  # Georgia Tech instructional JupyterHub: fill in the hub URL to get a "launch on JupyterHub" button (uses nbgitpuller)
+  # jupyterhub_url: https://<gt-instructional-hub>
+
+sphinx:
+  config:
+    html_show_copyright: true
+    # %%R and %%bash cells in the labs are highlighted as Python; silence the lexer warning
+    suppress_warnings: ["misc.highlighting_failure"]

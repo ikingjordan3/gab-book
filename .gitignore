@@ -1,0 +1,10 @@
+_build/
+.ipynb_checkpoints/
+__pycache__/
+.jupyter_cache/
+*.pyc
+.DS_Store
+# lecture slides stay out of the public repo
+*.pptx
+*.potx
+*.key

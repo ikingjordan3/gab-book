@@ -1,0 +1,24 @@
+format: jb-book
+root: intro
+parts:
+  - caption: Getting started
+    chapters:
+      - file: setup
+  - caption: Complex traits & GWAS (Lectures 16–17)
+    chapters:
+      - file: complex-traits-gwas/index
+        sections:
+          - file: complex-traits-gwas/complex-disease-overview
+          - file: complex-traits-gwas/variation-spectrum
+          - file: complex-traits-gwas/fisher-clt
+          - file: complex-traits-gwas/liability-threshold
+          - file: complex-traits-gwas/history
+          - file: complex-traits-gwas/heritability
+          - file: complex-traits-gwas/gwas-to-prs
+          - file: complex-traits-gwas/heritability-to-gwas
+          - file: complex-traits-gwas/case-control-design
+          - file: complex-traits-gwas/odds-ratios
+          - file: complex-traits-gwas/covariates
+          - file: complex-traits-gwas/association-models
+          - file: complex-traits-gwas/significance-and-plots
+          - file: complex-traits-gwas/lab-single-snp-association
