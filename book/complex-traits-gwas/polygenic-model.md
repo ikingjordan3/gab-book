@@ -60,6 +60,8 @@ Galton, the founder of the biometric school, built a device that captures Fisher
 A Galton board with 12 rows of pegs. Each ball's final bin is the number of times it bounced right.
 ```
 
+▶ **Watch one in action:** [a Galton board on YouTube](https://www.youtube.com/shorts/TwctT3Ncm1w) (short video).
+
 - At each peg a ball bounces left or right: a **50:50 binary event**.
 - Its final bin is the number of rightward bounces, the **sum of many binary outcomes**, so the bin counts
   follow a binomial distribution.
