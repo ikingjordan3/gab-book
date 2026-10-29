@@ -1,9 +1,9 @@
-# Heritability: definition and misconceptions
+# Heritability
 
 ```{admonition} Module at a glance
-**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** Fisher 1918 and the central limit theorem
+**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** {doc}`polygenic-model`
 
-**After this module you should be able to:** Define H² = V<sub>G</sub>/V<sub>P</sub> and correct common misreadings of heritability.
+**After this module you should be able to:** define heritability, partition genetic variance into additive, dominance and epistatic parts, distinguish broad- from narrow-sense heritability, estimate h² from twins with the ACE model, and correct common misreadings.
 ```
 
 ```{note}

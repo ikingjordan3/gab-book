@@ -15,10 +15,8 @@ parts:
       - file: clinical-genetic-testing/index
       - file: complex-traits-gwas/index
         sections:
-          - file: complex-traits-gwas/complex-disease-overview
           - file: complex-traits-gwas/variation-spectrum
-          - file: complex-traits-gwas/fisher-clt
-          - file: complex-traits-gwas/liability-threshold
+          - file: complex-traits-gwas/polygenic-model
           - file: complex-traits-gwas/history
           - file: complex-traits-gwas/heritability
           - file: complex-traits-gwas/gwas-to-prs

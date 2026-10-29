@@ -1,0 +1,86 @@
+[
+  {
+    "question": "Which combination best describes variants that cause rare, monogenic (Mendelian) disease?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Low allele frequency, large effect, high penetrance", "correct": true,
+       "feedback": "Right. Mendelian disease variants are rare, and carrying them almost always causes the disease."},
+      {"answer": "High allele frequency, small effect, low penetrance", "correct": false,
+       "feedback": "That describes the common variants found by GWAS for complex disease, at the bottom right of the frequency–effect plot."},
+      {"answer": "High allele frequency, large effect, high penetrance", "correct": false,
+       "feedback": "Common variants of large effect are rare in practice (top right of the plot). Mendelian variants are rare in the population."},
+      {"answer": "Low allele frequency, small effect, low penetrance", "correct": false,
+       "feedback": "Rare variants of small effect exist but are very hard to identify. Mendelian variants have large effects."}
+    ]
+  },
+  {
+    "question": "In a study, 80 of 100 people who carry a particular variant develop the disease. What is the penetrance of the variant?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "0.8 (80%)", "correct": true,
+       "feedback": "Right. Penetrance is the proportion of carriers who develop the trait: 80 / 100 = 0.8."},
+      {"answer": "0.2 (20%)", "correct": false,
+       "feedback": "That is the proportion of carriers who stay healthy. Penetrance counts the carriers who are affected."},
+      {"answer": "It depends on the allele frequency", "correct": false,
+       "feedback": "Penetrance is measured among carriers only, so the frequency of the variant in the population does not enter into it."},
+      {"answer": "It cannot be known without non-carriers", "correct": false,
+       "feedback": "Non-carriers are needed to measure relative risk, but penetrance only needs the carriers: affected carriers / all carriers."}
+    ]
+  },
+  {
+    "question": "Why are there few known examples of common variants with large effects on serious disease?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Natural selection tends to keep strongly harmful alleles rare", "correct": true,
+       "feedback": "Right. An allele that strongly raises the risk of a serious disease is selected against, so it rarely reaches high frequency."},
+      {"answer": "GWAS cannot detect large effects", "correct": false,
+       "feedback": "A common variant with a large effect would be easy to detect by GWAS. The problem is that few such variants exist."},
+      {"answer": "Large effects only occur on the X chromosome", "correct": false,
+       "feedback": "Large-effect variants occur on every chromosome; cystic fibrosis, for example, is caused by variants on chromosome 7."},
+      {"answer": "Common variants are not inherited", "correct": false,
+       "feedback": "Common variants are inherited like any other variant. Their frequency is what makes large effects unusual, through selection."}
+    ]
+  },
+  {
+    "question": "Rare variants with small effects (bottom left of the plot) are very hard to identify. Why?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "They are too rare for population studies and too weak to follow in families", "correct": true,
+       "feedback": "Right. Association studies need enough carriers to see a difference, and family studies need a strong effect to track through a pedigree."},
+      {"answer": "They are not present in the reference genome", "correct": false,
+       "feedback": "Most variants of any kind are absent from the reference genome; that does not stop them being called and tested."},
+      {"answer": "Sequencing cannot detect rare variants", "correct": false,
+       "feedback": "Sequencing detects rare variants well. The difficulty is statistical: linking them to disease."},
+      {"answer": "They only affect drug response", "correct": false,
+       "feedback": "Rare small-effect variants can influence any trait. They are hard to find because of their frequency and effect size."}
+    ]
+  },
+  {
+    "question": "A patient carries both copies of a pathogenic CFTR variant. Another person carries many common risk alleles for coronary artery disease. Which statement is correct?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The CFTR result supports a diagnosis; the coronary result only shifts the probability of disease", "correct": true,
+       "feedback": "Right. Monogenic disease genetics is largely deterministic, while risk for a polygenic disease is probabilistic."},
+      {"answer": "Both results give a firm diagnosis", "correct": false,
+       "feedback": "Common risk alleles each have small effects and low penetrance; many carriers of many risk alleles never develop coronary artery disease."},
+      {"answer": "Both results only shift the probability of disease", "correct": false,
+       "feedback": "Two pathogenic CFTR variants cause cystic fibrosis with high penetrance, so this result is diagnostic."},
+      {"answer": "Neither result is informative without a GWAS of the patient", "correct": false,
+       "feedback": "A GWAS is a study of many people; it is not run on one patient. The CFTR result is informative on its own."}
+    ]
+  },
+  {
+    "question": "Which public resource archives the classifications (for example pathogenic or benign) that laboratories submit for individual variants?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "ClinVar", "correct": true,
+       "feedback": "Right. ClinVar, at NCBI, collects variant classifications and the evidence submitted for them."},
+      {"answer": "OMIM", "correct": false,
+       "feedback": "OMIM catalogues genes and genetic disorders, with summaries of the literature, rather than individual laboratory submissions."},
+      {"answer": "ClinGen", "correct": false,
+       "feedback": "ClinGen curates gene–disease relationships and develops classification standards; laboratory classifications are archived in ClinVar."},
+      {"answer": "ACMG", "correct": false,
+       "feedback": "ACMG is a professional society that sets the standards for classifying variants; it is not a database."}
+    ]
+  }
+]
