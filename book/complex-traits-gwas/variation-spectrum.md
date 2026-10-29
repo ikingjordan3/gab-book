@@ -111,8 +111,7 @@ The clinical path for rare, monogenic disease is well established (see {doc}`../
    variants, and **ClinGen** curates which genes cause which diseases and how strong the evidence is.
 3. **Interpretation.** The American College of Medical Genetics and Genomics (**ACMG**) sets standards of
    evidence for linking a patient's variant to disease. Variants are classified as pathogenic, likely
-   pathogenic, of uncertain significance, likely benign or benign. Evidence includes, for example, a
-   low frequency in the general population.
+   pathogenic, of uncertain significance, likely benign or benign.
 
 There is no equivalent of this pipeline for common disease. A single common variant with an odds ratio of
 1.2 is not "pathogenic"; it is one small contribution to risk among many.
