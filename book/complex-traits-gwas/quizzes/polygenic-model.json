@@ -1,0 +1,86 @@
+[
+  {
+    "question": "What did Fisher's 1918 paper show?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Many Mendelian loci of small additive effect, plus environment, produce a continuous, normally distributed trait", "correct": true,
+       "feedback": "Right. Fisher showed that Mendelian inheritance and continuous variation are compatible, and that the model predicts correlations between relatives."},
+      {"answer": "Continuous traits are not inherited in a Mendelian way", "correct": false,
+       "feedback": "That was the biometricians' doubt. Fisher showed the opposite: continuous traits can be fully Mendelian if many loci are involved."},
+      {"answer": "Each continuous trait is controlled by a single gene of large effect", "correct": false,
+       "feedback": "A single locus gives only three genotype classes. A continuous, bell-shaped distribution needs many loci, each of small effect."},
+      {"answer": "Evolution proceeds only by discontinuous jumps", "correct": false,
+       "feedback": "That was the Mendelians' view of evolution. Fisher's work supported gradual change built from many small genetic effects."}
+    ]
+  },
+  {
+    "question": "In the Galton-board analogy, what does the bin a ball lands in represent?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A person's total number of risk alleles", "correct": true,
+       "feedback": "Right. Each peg is one inherited allele (risk or non-risk), and the bin is the sum: the person's genetic score."},
+      {"answer": "A single allele inherited at one locus", "correct": false,
+       "feedback": "That is what one peg represents. The bin is the sum over all pegs."},
+      {"answer": "The environment the person lives in", "correct": false,
+       "feedback": "The board models only the genetic part; environment adds further smoothing on top."},
+      {"answer": "Whether the person is affected by disease", "correct": false,
+       "feedback": "Disease status enters with the liability-threshold model, which adds a threshold on top of the continuous score."}
+    ]
+  },
+  {
+    "question": "A trait is influenced by 50 biallelic loci, each with risk-allele frequency 0.5 and equal effect. What is the mean number of risk alleles a person carries?",
+    "type": "numeric",
+    "precision": 0,
+    "answers": [
+      {"type": "value", "value": 50, "correct": true,
+       "feedback": "Right. Each person has 2 × 50 = 100 alleles at these loci, and half are risk alleles on average: 2Mp = 2 × 50 × 0.5 = 50."},
+      {"type": "value", "value": 25, "correct": false,
+       "feedback": "Remember that each person carries two alleles at every locus: the number of trials is 2M = 100, so the mean is 100 × 0.5."},
+      {"type": "value", "value": 100, "correct": false,
+       "feedback": "100 is the total number of alleles (2M). Multiply by the risk-allele frequency, 0.5."},
+      {"type": "default", "feedback": "The score is Binomial(2M, p), whose mean is 2Mp."}
+    ]
+  },
+  {
+    "question": "Which situation would most likely make a trait's distribution depart from a normal curve?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "One locus with a very large effect segregating in the population", "correct": true,
+       "feedback": "Right. The central limit theorem needs many small effects. A single large-effect locus can make the distribution skewed or bimodal."},
+      {"answer": "Adding environmental variation", "correct": false,
+       "feedback": "Environmental effects are themselves the sum of many small influences, so they make the distribution smoother and more normal."},
+      {"answer": "Increasing the number of small-effect loci from 20 to 100", "correct": false,
+       "feedback": "More small, independent effects bring the distribution closer to normal, not further from it."},
+      {"answer": "Loci located on different chromosomes", "correct": false,
+       "feedback": "Unlinked loci are independent, which is one of the conditions for the central limit theorem to hold."}
+    ]
+  },
+  {
+    "question": "Under the liability-threshold model, why do first-degree relatives of an affected person have a higher risk of the disease?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "They share risk alleles, so their liability distribution is shifted toward the threshold", "correct": true,
+       "feedback": "Right. The threshold stays put, but the relatives' distribution moves right, so a larger fraction of them exceed it."},
+      {"answer": "Their threshold is lower than the population threshold", "correct": false,
+       "feedback": "In the model the threshold is the same for everyone. What changes is the relatives' liability distribution."},
+      {"answer": "They inherit a single dominant disease allele", "correct": false,
+       "feedback": "That is a Mendelian explanation. The liability-threshold model explains familial clustering without any single major gene."},
+      {"answer": "Disease prevalence is higher in large families", "correct": false,
+       "feedback": "Family size does not enter the model. Relatives are at higher risk because they share genes (and often environment) with the affected person."}
+    ]
+  },
+  {
+    "question": "A disease affects 5% of the population. On the liability scale, what does that 5% correspond to?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The area of the normal distribution above the threshold", "correct": true,
+       "feedback": "Right. The tail area above the threshold equals the prevalence, so a 5% prevalence puts the threshold about 1.64 SD above the mean."},
+      {"answer": "The heritability of the disease", "correct": false,
+       "feedback": "Heritability describes how much of the variation in liability is genetic. Prevalence sets where the threshold sits."},
+      {"answer": "The mean liability of affected people", "correct": false,
+       "feedback": "The mean liability of affected people is above the threshold (about 2.06 SD here); the prevalence is the area above the threshold."},
+      {"answer": "The proportion of relatives who are affected", "correct": false,
+       "feedback": "Relatives of cases have a higher risk than 5%, because their liability distribution is shifted."}
+    ]
+  }
+]
