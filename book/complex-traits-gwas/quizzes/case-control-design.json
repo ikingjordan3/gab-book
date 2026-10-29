@@ -1,0 +1,74 @@
+[
+  {
+    "question": "In a case-control GWAS, what is compared at each SNP?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The allele (or genotype) frequencies in cases versus controls", "correct": true,
+       "feedback": "Right. A SNP is associated with the disease if one allele is significantly more common in cases than in controls."},
+      {"answer": "The gene expression levels in cases versus controls", "correct": false,
+       "feedback": "A GWAS compares DNA variants, not expression."},
+      {"answer": "The number of mutations each person carries", "correct": false,
+       "feedback": "A GWAS tests each SNP separately, comparing allele frequencies between the groups."},
+      {"answer": "How the SNP is inherited within families", "correct": false,
+       "feedback": "Following inheritance in families is linkage analysis. A GWAS compares unrelated cases and controls."}
+    ]
+  },
+  {
+    "question": "At a SNP, 500 cases have genotypes CC = 100, CT = 250, TT = 150. How many C alleles do the cases carry? (Type a number and press Enter.)",
+    "type": "numeric",
+    "precision": 3,
+    "answers": [
+      {"type": "value", "value": 450, "correct": true,
+       "feedback": "Right. Each CC person carries two C alleles and each CT person one: 2 × 100 + 250 = 450 (out of 1,000 alleles)."},
+      {"type": "value", "value": 350, "correct": false,
+       "feedback": "That counts CC people once. Each CC person carries two C alleles: 2 × 100 + 250."},
+      {"type": "value", "value": 100, "correct": false,
+       "feedback": "That is the number of CC people. Count alleles: CC contributes two C alleles each, CT one."},
+      {"type": "value", "value": 550, "correct": false,
+       "feedback": "That is the number of T alleles (250 + 2 × 150). C alleles = 2 × CC + CT."},
+      {"type": "default", "feedback": "C alleles = 2 × (number of CC) + (number of CT)."}
+    ]
+  },
+  {
+    "question": "At a SNP, the A allele has frequency 0.30 in cases and 0.22 in controls. Which is the effect allele?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A, because it is more common in cases", "correct": true,
+       "feedback": "Right. The effect allele is the one associated with the trait; here A is enriched in cases, so it is also the risk allele."},
+      {"answer": "The other allele, because it is more common overall", "correct": false,
+       "feedback": "The effect allele is defined by its association with disease, not by which allele is more common."},
+      {"answer": "Neither: an allele must be absent from controls to be an effect allele", "correct": false,
+       "feedback": "Common-variant effect alleles are present in both groups, just at different frequencies."},
+      {"answer": "It cannot be determined without the reference genome", "correct": false,
+       "feedback": "The reference genome is not needed; compare the allele frequencies between cases and controls."}
+    ]
+  },
+  {
+    "question": "Why do GWAS describe a SNP as 'associated with' a disease rather than 'causing' it?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The SNP may only be in linkage disequilibrium with a nearby causal variant", "correct": true,
+       "feedback": "Right. GWAS find loci; identifying the causal variant and gene usually needs further work (fine-mapping and functional studies)."},
+      {"answer": "Associations are never real", "correct": false,
+       "feedback": "Robust, replicated GWAS associations are real. The point is that the tested SNP need not be the causal one."},
+      {"answer": "Diseases are caused only by the environment", "correct": false,
+       "feedback": "Complex diseases are influenced by both genes and environment."},
+      {"answer": "Arrays cannot read the causal variant's sequence", "correct": false,
+       "feedback": "The issue is correlation (LD) between nearby variants, not the chemistry of the array."}
+    ]
+  },
+  {
+    "question": "Which problem is most likely if cases are recruited mainly from one ancestry group and controls mainly from another?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "False associations at SNPs whose allele frequencies differ between the ancestry groups", "correct": true,
+       "feedback": "Right. This is confounding by population structure, covered in the covariates module."},
+      {"answer": "Lower genotyping accuracy", "correct": false,
+       "feedback": "Ancestry does not by itself reduce genotyping accuracy; the problem is that allele frequencies differ for reasons unrelated to disease."},
+      {"answer": "No problem, as long as the sample is large", "correct": false,
+       "feedback": "A larger sample makes confounded differences even more significant. Matching or adjustment is needed."},
+      {"answer": "The effect allele cannot be defined", "correct": false,
+       "feedback": "Effect alleles can still be defined, but some associations will reflect ancestry rather than disease."}
+    ]
+  }
+]
