@@ -11,13 +11,11 @@ a lab, {doc}`lab-single-snp-association`, where you run an association test your
 
 | Lecture | Module | After this module you should be able to… |
 |---|---|---|
-| Complex disease | {doc}`Common disease as a genome-wide problem <complex-disease-overview>` | Frame common-disease risk as a probabilistic, genome-wide problem. |
-| Complex disease | {doc}`The spectrum of genetic variation in disease <variation-spectrum>` | Contrast rare, monogenic disease with common, polygenic disease in terms of allele frequency and effect size. |
-| Complex disease | {doc}`Fisher 1918 and the central limit theorem <fisher-clt>` | Explain how many binomial loci add up to a continuous, normally distributed trait. |
-| Complex disease | {doc}`The liability-threshold model <liability-threshold>` | Connect a continuous liability to a binary disease and to familial clustering. |
+| Complex disease | {doc}`Genetic variation in disease <variation-spectrum>` | Contrast rare, monogenic disease with common, polygenic disease in terms of allele frequency and effect size. |
+| Complex disease | {doc}`The polygenic model of complex traits <polygenic-model>` | Explain how many small effects add up to a normal trait, and how a liability threshold produces a binary disease that clusters in families. |
 | Complex disease | {doc}`A short history of complex-disease genetics <history>` | Trace linkage → candidate genes → GWAS, and why each transition happened. |
-| Complex disease | {doc}`Heritability: definition and misconceptions <heritability>` | Define H² = V<sub>G</sub>/V<sub>P</sub> and correct common misreadings of heritability. |
-| Complex disease | {doc}`From GWAS to SNP-heritability and polygenic risk <gwas-to-prs>` | Show how GWAS effect sizes feed SNP-heritability and polygenic risk scores. |
+| Complex disease | {doc}`Heritability <heritability>` | Define H² and h², partition V<sub>G</sub> into V<sub>A</sub> + V<sub>D</sub> + V<sub>I</sub>, estimate h² from twins (ACE model) and correct common misreadings. |
+| Complex disease | {doc}`GWAS, SNP-heritability and polygenic risk <gwas-to-prs>` | Show how GWAS effect sizes feed SNP-heritability and polygenic risk scores. |
 | GWAS | {doc}`From heritability to GWAS <heritability-to-gwas>` | Connect heritability to GWAS loci and the bridge to polygenic risk. |
 | GWAS | {doc}`The case-control design <case-control-design>` | Describe the case-control design and how effect alleles are identified. |
 | GWAS | {doc}`Effect size: odds ratios and P-values <odds-ratios>` | Compute odds, odds ratios and a χ² P-value for one SNP. |

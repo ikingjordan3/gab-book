@@ -4,7 +4,7 @@
 
 This is the companion book for the **Genomics & Applied Bioinformatics** (BIOS 4150 / BIOL 6150) course that I teach
 at Georgia Tech. The course provides a practical introduction to concepts and methods in computational genomics,
-using the ***human genome*** as a working model. Chapters follow the course structure, with lecture slides and notes
+using the human genome as a working model. Chapters follow the course structure, with lecture notes and slides
 transformed into content modules using Claude.ai.
 
 Each chapter covers a weekly concept and has three parts:

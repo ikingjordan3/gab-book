@@ -1,9 +1,9 @@
-# From GWAS to SNP-heritability and polygenic risk
+# GWAS, SNP-heritability and polygenic risk
 
 ```{admonition} Module at a glance
-**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** Heritability; the liability-threshold model
+**Lecture:** Genetics of complex, common disease &nbsp;·&nbsp; **Prerequisite:** {doc}`heritability`
 
-**After this module you should be able to:** Show how GWAS effect sizes feed SNP-heritability and polygenic risk scores.
+**After this module you should be able to:** show how GWAS effect sizes feed SNP-heritability and polygenic risk scores.
 ```
 
 ```{note}
