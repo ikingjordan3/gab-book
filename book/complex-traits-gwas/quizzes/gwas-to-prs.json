@@ -1,0 +1,86 @@
+[
+  {
+    "question": "Very simply, what does a case-control GWAS look for?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "SNPs whose allele frequencies differ between cases and controls", "correct": true,
+       "feedback": "Right. At each SNP, a GWAS tests whether one allele is more common in cases than in controls."},
+      {"answer": "Genes that are expressed only in cases", "correct": false,
+       "feedback": "A GWAS tests DNA variants, not gene expression."},
+      {"answer": "Variants that co-segregate with disease in large families", "correct": false,
+       "feedback": "That describes linkage analysis. A GWAS compares unrelated cases and controls."},
+      {"answer": "New mutations present only in affected people", "correct": false,
+       "feedback": "GWAS focus on common variants carried by both cases and controls, just at different frequencies."}
+    ]
+  },
+  {
+    "question": "What does SNP-heritability (h²_SNP) measure?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The proportion of trait variance explained by the common SNPs included in a study", "correct": true,
+       "feedback": "Right. It is estimated from genotype data, by relating genetic similarity measured with SNPs to trait similarity."},
+      {"answer": "The proportion of trait variance explained by all genetic variation, including rare variants", "correct": false,
+       "feedback": "That is closer to h². Arrays tag common variants, so h²_SNP usually misses rare-variant effects and is lower than h²."},
+      {"answer": "The heritability of a single SNP", "correct": false,
+       "feedback": "h²_SNP is a genome-wide quantity: the variance explained by all genotyped SNPs together."},
+      {"answer": "The number of genome-wide significant SNPs", "correct": false,
+       "feedback": "h²_SNP is a proportion of variance, and it includes the many SNPs whose effects are too small to reach significance."}
+    ]
+  },
+  {
+    "question": "For most traits, which ordering is expected?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "h²_SNP ≤ h² ≤ H²", "correct": true,
+       "feedback": "Right. H² counts all genetic variance, h² only additive variance, and h²_SNP only the additive variance tagged by genotyped SNPs."},
+      {"answer": "H² ≤ h² ≤ h²_SNP", "correct": false,
+       "feedback": "This is reversed. Each step to the right counts more genetic variance, so the values increase from h²_SNP to H²."},
+      {"answer": "h² ≤ h²_SNP ≤ H²", "correct": false,
+       "feedback": "h²_SNP is part of h²: it is the additive variance captured by the SNPs on the array, so it cannot exceed h²."},
+      {"answer": "They are always equal", "correct": false,
+       "feedback": "They differ in what they count, which is the source of the 'missing heritability' gap."}
+    ]
+  },
+  {
+    "question": "Using the example table, what is the PRS of a person who carries one risk allele at every one of the six SNPs? (Give three decimal places and press Enter.)",
+    "type": "numeric",
+    "precision": 3,
+    "answers": [
+      {"type": "value", "value": 0.942, "correct": true,
+       "feedback": "Right. With G = 1 at every SNP, the PRS is the sum of the betas: 0.315 + 0.157 + 0.122 + 0.113 + 0.113 + 0.122 = 0.942."},
+      {"type": "value", "value": 1.884, "correct": false,
+       "feedback": "That is the score for two risk alleles at every SNP. With one copy each, G = 1, so PRS = Σβ = 0.942."},
+      {"type": "value", "value": 6, "correct": false,
+       "feedback": "That counts risk alleles without weighting them. A PRS multiplies each count by the SNP's effect size β."},
+      {"type": "default", "feedback": "PRS = Σ β_j G_j. Here every G_j = 1, so add up the six betas."}
+    ]
+  },
+  {
+    "question": "Why does a polygenic risk score built from thousands of SNPs follow an approximately normal distribution in a population?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It is a sum of many small, largely independent contributions (the central limit theorem)", "correct": true,
+       "feedback": "Right. This is the same argument as the Galton board and Fisher's model in the polygenic-model module."},
+      {"answer": "GWAS only report SNPs that are normally distributed", "correct": false,
+       "feedback": "Each SNP's genotype is 0, 1 or 2, which is not normal. The sum over many SNPs becomes normal."},
+      {"answer": "Risk alleles are rare", "correct": false,
+       "feedback": "Most GWAS SNPs are common. Normality comes from summing many small effects, not from allele frequency."},
+      {"answer": "Disease status is normally distributed", "correct": false,
+       "feedback": "Disease status is binary. The PRS estimates the continuous liability that underlies it."}
+    ]
+  },
+  {
+    "question": "A person's PRS for type 2 diabetes is in the top 5% of the population. What can you conclude?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Their genetic risk is higher than average, but they may never develop the disease", "correct": true,
+       "feedback": "Right. A PRS shifts the probability of disease; it is not a diagnosis. Environment and chance also matter."},
+      {"answer": "They will develop type 2 diabetes", "correct": false,
+       "feedback": "Common-disease genetics is probabilistic. Many people with high scores remain healthy."},
+      {"answer": "They carry a pathogenic variant for diabetes", "correct": false,
+       "feedback": "A PRS sums many common small-effect variants; it does not detect single pathogenic variants."},
+      {"answer": "Lifestyle cannot change their risk", "correct": false,
+       "feedback": "Type 2 diabetes risk depends strongly on obesity, diet and physical activity; a PRS describes only the genetic part."}
+    ]
+  }
+]
