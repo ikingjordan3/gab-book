@@ -1,0 +1,86 @@
+[
+  {
+    "question": "In a GWAS, the median χ² statistic across all SNPs is 0.546. What is the genomic inflation factor λ? (Give two decimal places and press Enter.)",
+    "type": "numeric",
+    "precision": 3,
+    "answers": [
+      {"type": "value", "value": 1.2, "correct": true,
+       "feedback": "Right. λ = median(χ²) / 0.455 = 0.546 / 0.455 = 1.20. This much inflation suggests confounding, such as population stratification."},
+      {"type": "value", "value": 0.546, "correct": false,
+       "feedback": "That is the median χ² itself. Divide by its expected median under the null, 0.455."},
+      {"type": "value", "value": 0.833, "correct": false,
+       "feedback": "You have the ratio upside down. λ = observed median / expected median = 0.546 / 0.455."},
+      {"type": "default", "feedback": "λ = median(χ²) / 0.455."}
+    ]
+  },
+  {
+    "question": "A Q-Q plot follows the diagonal for most SNPs and rises sharply only at the far right (the smallest P-values), with λ = 1.01. What does this suggest?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A well-controlled study with some true associations", "correct": true,
+       "feedback": "Right. This is the ideal pattern: no deviation at the low end, a tail of deviations at the high end."},
+      {"answer": "Strong population stratification", "correct": false,
+       "feedback": "Stratification lifts the whole curve off the diagonal early and gives λ well above 1."},
+      {"answer": "No SNP is associated with the trait", "correct": false,
+       "feedback": "If no SNP were associated, the tail would stay on the diagonal within the 95% band."},
+      {"answer": "Genotyping failed for most SNPs", "correct": false,
+       "feedback": "Systematic genotyping errors would tend to cause deviation across the distribution, not just a clean tail."}
+    ]
+  },
+  {
+    "question": "Where does the genome-wide significance threshold of 5 × 10⁻⁸ come from?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A Bonferroni correction of 0.05 for about 1 million independent tests", "correct": true,
+       "feedback": "Right. 0.05 / 1,000,000 = 5 × 10⁻⁸. The number of independent tests is lower than the number of SNPs because of LD."},
+      {"answer": "0.05 divided by the number of SNPs on the array", "correct": false,
+       "feedback": "Close, but SNPs are not independent because of LD. The threshold uses an estimate of about 1 million independent tests."},
+      {"answer": "It is the P-value of the strongest known GWAS hit", "correct": false,
+       "feedback": "The threshold is a multiple-testing correction, not a property of any particular SNP."},
+      {"answer": "It guarantees that every significant SNP is causal", "correct": false,
+       "feedback": "Significance controls false positives from chance; it does not show which variant in a locus is causal."}
+    ]
+  },
+  {
+    "question": "Why does each peak on a Manhattan plot look like a tower of many points rather than a single point?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Many nearby SNPs are in linkage disequilibrium with the causal variant, so they show similar association signals", "correct": true,
+       "feedback": "Right. Correlated SNPs rise together, which is why GWAS identify loci rather than single variants."},
+      {"answer": "Each SNP is tested many times", "correct": false,
+       "feedback": "Each SNP is tested once; the tower is made of different, correlated SNPs."},
+      {"answer": "Every SNP in the region is causal", "correct": false,
+       "feedback": "Usually one or a few variants are causal; the others are associated because they are correlated with them."},
+      {"answer": "The plot is drawn with a log scale", "correct": false,
+       "feedback": "The −log₁₀ scale stretches the y-axis but does not create the clustering; LD does."}
+    ]
+  },
+  {
+    "question": "In a LocusZoom plot, a SNP coloured red (r² = 0.9 with the lead SNP) has nearly the same P-value as the lead SNP. What can you conclude?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It carries almost the same signal, so the data alone cannot say which of the two is causal", "correct": true,
+       "feedback": "Right. Highly correlated SNPs are hard to tell apart statistically; fine-mapping and functional studies are needed."},
+      {"answer": "It must be the causal variant", "correct": false,
+       "feedback": "A high r² means it is strongly correlated with the lead SNP, not that it is causal."},
+      {"answer": "It is a false positive", "correct": false,
+       "feedback": "Its association is real but shared with the lead SNP through LD."},
+      {"answer": "It lies in a different locus", "correct": false,
+       "feedback": "High LD with the lead SNP means it is part of the same associated locus."}
+    ]
+  },
+  {
+    "question": "In the summary-statistics table, rs7903146 (TCF7L2) has β = 0.315. What is the odds ratio per T allele?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "About 1.37", "correct": true,
+       "feedback": "Right. OR = e^β = e^0.315 ≈ 1.37: each T allele raises the odds of type 2 diabetes by about 37%."},
+      {"answer": "0.315", "correct": false,
+       "feedback": "That is β, the change in log-odds. Exponentiate it to get the OR."},
+      {"answer": "About 0.73", "correct": false,
+       "feedback": "That would be e^−0.315. A positive β means the effect allele increases risk, so OR > 1."},
+      {"answer": "About 31.5", "correct": false,
+       "feedback": "β is on the log-odds scale; the OR is e^β, not 100 × β."}
+    ]
+  }
+]
