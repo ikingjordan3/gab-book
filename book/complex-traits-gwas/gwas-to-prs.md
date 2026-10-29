@@ -53,7 +53,150 @@ relationships. Two widely used approaches are:
 - **LD score regression**, which estimates $h^2_\text{SNP}$ from GWAS summary statistics alone, using the fact
   that SNPs in high linkage disequilibrium with many other SNPs tag more causal variation.
 
-**Missing heritability.** For most traits, SNP-heritability is lower than twin heritability, and early GWAS hits
+### GREML: genetic similarity measured from genotypes
+
+Two people picked at random from a population are not relatives, but they still share slightly more or slightly
+fewer alleles than average, purely by chance. GREML (**g**enomic-relatedness-based **r**estricted **m**aximum
+**l**ikelihood) uses those tiny differences in genetic similarity among unrelated people the way a twin study uses
+MZ and DZ twins.
+
+**Step 1: the genetic relationship matrix (GRM).** For every pair of people $j$ and $k$, genotyped at $M$ SNPs,
+
+$$
+A_{jk} = \frac{1}{M} \sum_{i=1}^{M} \frac{(x_{ij} - 2p_i)(x_{ik} - 2p_i)}{2p_i(1-p_i)}
+$$
+
+where $x_{ij}$ is the number of copies (0, 1 or 2) of the reference allele that person $j$ carries at SNP $i$ and
+$p_i$ is that allele's frequency. $A_{jk}$ is a genome-wide correlation between the two people's genotypes: about
+0.5 for full siblings, and close to 0 for unrelated people, with small positive and negative values from chance
+sharing. Close relatives are removed (typically pairs with $A_{jk} > 0.025$) so that shared family environment
+cannot masquerade as genetic similarity.
+
+**Step 2: a model for the phenotypes.** Each person's trait value is the sum of a genetic effect $g$, from all the
+SNPs together, and an environmental effect $e$. People who are genetically more similar have more similar genetic
+effects, so
+
+$$
+\operatorname{Var}(\mathbf{y}) = \mathbf{A}\,\sigma^2_g + \mathbf{I}\,\sigma^2_e,
+\qquad
+h^2_\text{SNP} = \frac{\sigma^2_g}{\sigma^2_g + \sigma^2_e}
+$$
+
+where $\mathbf{A}$ is the GRM and $\mathbf{I}$ the identity matrix. GREML finds the values of $\sigma^2_g$ and
+$\sigma^2_e$ that best fit the observed phenotypes, by restricted maximum likelihood, as implemented in the
+software GCTA (Yang et al., [2011](https://doi.org/10.1016/j.ajhg.2010.11.011)).
+
+**The intuition.** For a standardized trait, the expected product of two people's trait values is
+$A_{jk} \, h^2_\text{SNP}$. So if you plot the phenotypic similarity of every pair of people against their genetic
+similarity, the slope of the line is the SNP-heritability. (This simpler regression is called Haseman–Elston
+regression; GREML uses the same information more efficiently.) The simulation below does exactly that for 2,000
+unrelated people genotyped at 3,000 SNPs, with a true SNP-heritability of 0.5:
+
+```{code-cell} ipython3
+import numpy as np
+import matplotlib.pyplot as plt
+
+rng = np.random.default_rng(7)
+N, M, h2 = 2_000, 3_000, 0.5
+p = rng.uniform(0.05, 0.5, M)            # allele frequencies
+X = rng.binomial(2, p, size=(N, M))      # genotypes 0/1/2
+Z = (X - 2 * p) / np.sqrt(2 * p * (1 - p))   # standardized
+g = Z @ rng.normal(0, np.sqrt(h2 / M), M)   # genetic effects
+y = g + rng.normal(0, np.sqrt(1 - h2), N)    # plus environment
+y = (y - y.mean()) / y.std()             # standardized trait
+
+A = Z @ Z.T / M                          # the GRM
+pairs = np.triu_indices(N, k=1)          # each pair once
+a = A[pairs]                             # genetic similarity
+yy = np.outer(y, y)[pairs]               # trait similarity
+slope = np.sum(a * yy) / np.sum(a * a)   # slope through 0
+print(f"{len(a):,} pairs; estimated h2_SNP = {slope:.2f} (true value {h2})")
+
+edges = np.quantile(a, np.linspace(0, 1, 21))   # 20 bins
+which = np.digitize(a, edges[1:-1])
+mid = np.array([a[which == b].mean() for b in range(20)])
+mean_yy = [yy[which == b].mean() for b in range(20)]
+fig, ax = plt.subplots(figsize=(6.5, 3.6))
+ax.scatter(mid, mean_yy, color="#3B5B92", zorder=2, label="pairs (binned means)")
+ax.plot(mid, slope * mid, color="#6B3FA0", lw=2.5, label=f"slope = {slope:.2f}")
+ax.axhline(0, color="#BDBDBD", lw=1); ax.axvline(0, color="#BDBDBD", lw=1)
+ax.set_xlabel("Genetic similarity $A_{jk}$")
+ax.set_ylabel("Trait similarity $y_j y_k$")
+ax.spines[["top", "right"]].set_visible(False); ax.legend(frameon=False)
+plt.show()
+```
+
+Even though every pair is unrelated, so the genetic similarities are all close to zero, nearly two million pairs
+give enough information to recover the true value.
+
+### LD score regression: heritability from summary statistics
+
+GREML needs every individual's genotypes, which large consortia often cannot share. **LD score regression**
+(Bulik-Sullivan et al., [2015](https://doi.org/10.1038/ng.3211)) estimates SNP-heritability from GWAS summary
+statistics alone.
+
+**The LD score.** A SNP is associated with a trait if it is a causal variant or if it is in linkage
+disequilibrium (LD) with one. The **LD score** of SNP $j$ measures how much other variation it tags:
+
+$$
+\ell_j = \sum_k r^2_{jk}
+$$
+
+the sum of its squared correlations ($r^2$) with all nearby SNPs $k$, including itself. LD scores are computed
+once from a reference panel with the same ancestry as the GWAS.
+
+**The regression.** If a trait is polygenic, causal variants are scattered throughout the genome, so a SNP that
+tags more variation (a higher LD score) is expected to show a stronger association. For a GWAS of $N$ people
+and $M$ SNPs, the expected association statistic of SNP $j$ is
+
+$$
+\operatorname{E}\!\left[\chi^2_j\right] = \frac{N\,h^2_\text{SNP}}{M}\,\ell_j \;+\; N a \;+\; 1
+$$
+
+Regressing each SNP's $\chi^2$ on its LD score gives two useful numbers:
+
+- the **slope**, which estimates $h^2_\text{SNP}$; and
+- the **intercept**, $1 + Na$, which measures confounding. Population stratification or cryptic relatedness
+  ($a$) inflates the $\chi^2$ of every SNP equally, whatever its LD score, so it raises the intercept above 1
+  but leaves the slope alone.
+
+The simulation below generates $\chi^2$ statistics for a million SNPs from a GWAS of 50,000 people, with and
+without confounding:
+
+```{code-cell} ipython3
+rng = np.random.default_rng(3)
+M, N, h2 = 1_000_000, 50_000, 0.3
+ld = rng.gamma(2.0, 30.0, M) + 1          # LD scores from a reference panel
+edges = np.quantile(ld, np.linspace(0, 1, 21))
+which = np.digitize(ld, edges[1:-1])      # 20 bins of LD score
+
+fig, ax = plt.subplots(figsize=(6.5, 3.6))
+for Na, colour in [(0.0, "#3B5B92"), (0.15, "#B03A2E")]:
+    label = "with confounding" if Na else "no confounding"
+    chi2 = (1 + N * h2 * ld / M + Na) * rng.chisquare(1, M)
+    slope, intercept = np.polyfit(ld, chi2, 1)
+    lam = np.median(chi2) / 0.455         # genomic inflation factor
+    print(f"{label}: h2_SNP = {slope * M / N:.2f}, "
+          f"intercept = {intercept:.2f}, lambda = {lam:.2f}")
+    x = [ld[which == b].mean() for b in range(20)]
+    y = [chi2[which == b].mean() for b in range(20)]
+    ax.scatter(x, y, color=colour, s=25, zorder=2)
+    xs = np.array([0, max(x)])
+    ax.plot(xs, intercept + slope * xs, color=colour, lw=2.5, label=label)
+ax.axhline(1, color="#BDBDBD", lw=1, ls="--")
+ax.set_xlabel("LD score"); ax.set_ylabel(r"Mean $\chi^2$")
+ax.spines[["top", "right"]].set_visible(False); ax.legend(frameon=False)
+plt.show()
+```
+
+Both analyses recover the true SNP-heritability of 0.3 from the slope. Without confounding the intercept is 1;
+with confounding it is about 1.15. Notice that in both cases the average $\chi^2$ is well above 1: in a large GWAS
+of a polygenic trait, many true small effects inflate the test statistics even without any confounding. LD score
+regression separates the two, a point that returns in {doc}`significance-and-plots`.
+
+### Missing heritability
+
+For most traits, SNP-heritability is lower than twin heritability, and early GWAS hits
 explained far less still. For height, twin studies give $h^2 \approx 0.8$; the first GWAS-significant SNPs
 explained only about 5% of the variance, while all common SNPs together explained about 45% (Yang et al.,
 [2010](https://doi.org/10.1038/ng.608)). The gap between heritability and what GWAS explain became known as
