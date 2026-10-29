@@ -1,0 +1,72 @@
+[
+  {
+    "question": "What is the main limitation of the χ² test for GWAS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It does not let you add covariates such as age, sex and ancestry", "correct": true,
+       "feedback": "Right. The χ² test compares allele counts only; regression models can include covariates."},
+      {"answer": "It cannot produce a P-value", "correct": false,
+       "feedback": "The χ² test does give a P-value. Its problem is that it cannot adjust for other variables."},
+      {"answer": "It only works for continuous traits", "correct": false,
+       "feedback": "The allelic χ² test is used for binary (case-control) traits."},
+      {"answer": "It requires related individuals", "correct": false,
+       "feedback": "It is applied to unrelated cases and controls."}
+    ]
+  },
+  {
+    "question": "Why is age included as a covariate in a GWAS of type 2 diabetes?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Diabetes risk rises steeply with age, so age differences between cases and controls can distort associations", "correct": true,
+       "feedback": "Right. Including age also explains part of the variation in risk, which makes genetic effects easier to detect."},
+      {"answer": "Allele frequencies change during a person's lifetime", "correct": false,
+       "feedback": "A person's germline genotype does not change with age. Age matters because disease risk changes with age."},
+      {"answer": "Older people cannot be genotyped accurately", "correct": false,
+       "feedback": "Genotyping accuracy does not depend on age."},
+      {"answer": "Age is a genetic variant", "correct": false,
+       "feedback": "Age is a non-genetic covariate that affects disease risk."}
+    ]
+  },
+  {
+    "question": "In the blue/red example, each subpopulation has an allelic odds ratio of exactly 1.0, yet the pooled data give OR = 1.2 and P ≈ 6 × 10⁻⁹. Why?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The red subpopulation has both more A alleles and more diabetes, so pooling links A to disease", "correct": true,
+       "feedback": "Right. A difference in both allele frequency and prevalence between hidden groups creates a spurious association."},
+      {"answer": "The SNP has a small true effect that only shows up in large samples", "correct": false,
+       "feedback": "Within each subpopulation the case/control ratio is identical for every genotype: there is no true effect."},
+      {"answer": "The χ² test was calculated incorrectly", "correct": false,
+       "feedback": "The calculation is correct; the problem is the design, which ignores ancestry."},
+      {"answer": "Diabetes causes the A allele", "correct": false,
+       "feedback": "Disease cannot change germline genotypes. The association comes from confounding by subpopulation."}
+    ]
+  },
+  {
+    "question": "In the chopsticks parable, what role does ancestry play?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A confounder that influences both the HLA allele frequency and chopstick use", "correct": true,
+       "feedback": "Right. Because ancestry affects both, they are associated even though the HLA gene has nothing to do with dexterity."},
+      {"answer": "The causal pathway: the HLA gene changes how people use chopsticks", "correct": false,
+       "feedback": "The HLA gene has no effect on manual dexterity; chopstick use differs between ancestry groups for cultural reasons."},
+      {"answer": "An outcome caused by chopstick use", "correct": false,
+       "feedback": "Using chopsticks does not change ancestry. Ancestry is upstream of both variables."},
+      {"answer": "It plays no role; the association is real", "correct": false,
+       "feedback": "The association is spurious: it disappears when ancestry is taken into account."}
+    ]
+  },
+  {
+    "question": "After adding the top 10 genetic principal components to a GWAS model, what does the SNP coefficient β₁ measure?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The SNP's effect on the trait within ancestry, removing associations driven by ancestry differences", "correct": true,
+       "feedback": "Right. The PCs absorb ancestry-related differences, so spurious signals like SUSHI disappear."},
+      {"answer": "The ancestry of each individual", "correct": false,
+       "feedback": "Ancestry is captured by the PC coefficients; β₁ is the SNP effect after accounting for them."},
+      {"answer": "The heritability of the trait", "correct": false,
+       "feedback": "β₁ is the effect of one SNP, not the total genetic contribution."},
+      {"answer": "The proportion of people who are cases", "correct": false,
+       "feedback": "That is the case fraction in the sample; β₁ is a per-allele effect size."}
+    ]
+  }
+]
