@@ -57,7 +57,8 @@ For each trait, the trait-associated variants tell us:
 - **how much** of the variance they explain, individually and together.
 
 Large GWAS have shown that most common traits and diseases are highly polygenic. Type 2 diabetes, the running
-example in this lecture, has more than 600 associated loci, and for adult height a GWAS of about 5 million
+example in this lecture, has more than 600 associated loci in a multi-ancestry GWAS of 2.5 million people
+(Suzuki et al., [2024](https://doi.org/10.1038/s41586-024-07019-6)), and for adult height a GWAS of about 5 million
 people identified over 12,000 independent associated SNPs (Yengo et al.,
 [2022](https://doi.org/10.1038/s41586-022-05275-y)). Each of these variants changes the trait only slightly;
 it is their combined effect that matters.

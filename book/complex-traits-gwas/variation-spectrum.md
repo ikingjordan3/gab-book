@@ -95,8 +95,8 @@ Person two has type 2 diabetes. Risk comes from many small-effect variants sprea
 genome. Variant positions are schematic.
 ```
 
-**Type 2 diabetes** is a common, complex disease. GWAS have found more than 600 associated loci, each of
-which changes risk only slightly, and obesity, diet, physical activity and age matter too. No single
+**Type 2 diabetes** is a common, complex disease. GWAS have found more than 600 associated loci
+(Suzuki et al., [2024](https://doi.org/10.1038/s41586-024-07019-6)), each of which changes risk only slightly, and obesity, diet, physical activity and age matter too. No single
 variant decides whether a person develops the disease. Carrying more risk alleles
 shifts the odds, so the genetics is **probabilistic**.
 
