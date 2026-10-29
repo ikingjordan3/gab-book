@@ -32,7 +32,7 @@ variants, and polygenic risk scores (PRS) add them up for one person.
 | | Rare, monogenic (Mendelian) disease | Common, complex, polygenic disease | Response to drugs |
 |---|---|---|---|
 | **Genetic cause** | One or a few loci | Many loci plus environmental effects | Often one or a few loci |
-| **Allele frequency** | Low | High | High |
+| **Allele frequency** | Rare | Common | Common |
 | **Penetrance** | High | Low | High |
 | **Covered in** | {doc}`chapter 5 <../monogenic-disease/index>` | this chapter | {doc}`chapter 10 <../pharmacogenomics/index>` |
 
