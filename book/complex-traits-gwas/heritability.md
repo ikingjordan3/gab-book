@@ -202,7 +202,7 @@ era — concepts and misconceptions* ([Nature Reviews Genetics, 2008](https://do
 
 ## How heritable are human traits?
 
-The largest answer to that question comes from a meta-analysis of fifty years of twin studies by Polderman
+One of the largest answers to that question comes from a meta-analysis of fifty years of twin studies by Polderman
 and colleagues ([Nature Genetics, 2015](https://doi.org/10.1038/ng.3285)). They combined twin correlations and
 reported variance components for:
 
