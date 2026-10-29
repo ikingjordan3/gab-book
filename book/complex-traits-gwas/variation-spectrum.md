@@ -22,7 +22,7 @@ quality of the reads, mapped them to the reference genome and called variants. T
 **interpret** those variants: what do they mean for this person's health?
 
 For a rare, monogenic disease the answer is often a **diagnosis**: one or two variants in a single gene
-explain the condition. For a common disease such as type 2 diabetes or coronary artery disease, the
+explain the condition. For a common disease such as type 2 diabetes, the
 answer is a **risk estimate**. Risk comes from the combined effect of many variants across the genome,
 each with a small effect, so the tools change too: genome-wide association studies (GWAS) find the
 variants, and polygenic risk scores (PRS) add them up for one person.
@@ -87,17 +87,17 @@ chromosome 7, one on each copy. Variant positions are schematic.
 carry a disease-causing variant. If you find those two variants, you have the diagnosis. In that
 sense, the genetics is **deterministic**.
 
-```{figure} images/karyotype_cad.png
-:alt: Schematic genome of person two, with coronary artery disease. The same background variants are shown, plus many small-effect risk variants spread across most chromosomes.
+```{figure} images/karyotype_t2d.png
+:alt: Schematic genome of person two, with type 2 diabetes. The same background variants are shown, plus many small-effect risk variants spread across most chromosomes.
 :width: 680px
 
-Person two has coronary artery disease. Risk comes from many small-effect variants spread across the
+Person two has type 2 diabetes. Risk comes from many small-effect variants spread across the
 genome. Variant positions are schematic.
 ```
 
-**Coronary artery disease** is a common, complex disease. GWAS have found hundreds of associated loci,
-each of which changes risk only slightly, and diet, smoking, exercise and other environmental factors
-matter too. No single variant decides whether a person develops the disease. Carrying more risk alleles
+**Type 2 diabetes** is a common, complex disease. GWAS have found more than 600 associated loci, each of
+which changes risk only slightly, and obesity, diet, physical activity and age matter too. No single
+variant decides whether a person develops the disease. Carrying more risk alleles
 shifts the odds, so the genetics is **probabilistic**.
 
 ## Rare disease in clinical practice
@@ -128,7 +128,8 @@ Moving from rare to common disease means moving from a deterministic to a probab
 
 The rest of this chapter builds the ideas needed to work with that kind of genetics:
 {doc}`polygenic-model` explains how many small effects combine, {doc}`heritability` measures how much
-genetics matters overall, and the GWAS modules show how the individual variants are found.
+genetics matters overall, and the GWAS modules show how the individual variants are found,
+using type 2 diabetes as their running example.
 
 ## Self-check
 
