@@ -16,7 +16,7 @@ a lab, {doc}`lab-single-snp-association`, where you run an association test your
 | Complex disease | {doc}`A short history of complex-disease genetics <history>` | Trace linkage → candidate genes → GWAS, and why each transition happened. |
 | Complex disease | {doc}`Heritability <heritability>` | Define H² and h², partition V<sub>G</sub> into V<sub>A</sub> + V<sub>D</sub> + V<sub>I</sub>, estimate h² from twins (ACE model) and correct common misreadings. |
 | Complex disease | {doc}`GWAS, SNP-heritability and polygenic risk <gwas-to-prs>` | Show how GWAS effect sizes feed SNP-heritability and polygenic risk scores. |
-| GWAS | {doc}`From heritability to GWAS <heritability-to-gwas>` | Connect heritability to GWAS loci and the bridge to polygenic risk. |
+| GWAS | {doc}`From heritability to GWAS <heritability-to-gwas>` | Connect heritability to GWAS loci, describe genetic architecture, and explain GWAS summary statistics. |
 | GWAS | {doc}`The case-control design <case-control-design>` | Describe the case-control design and how effect alleles are identified. |
 | GWAS | {doc}`Effect size: odds ratios and P-values <odds-ratios>` | Compute odds, odds ratios and a χ² P-value for one SNP. |
 | GWAS | {doc}`Covariates and confounding <covariates>` | Explain why age, sex and population structure must be modelled. |

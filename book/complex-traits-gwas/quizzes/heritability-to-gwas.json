@@ -1,0 +1,72 @@
+[
+  {
+    "question": "What is the key difference between heritability and the results of a GWAS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Heritability measures the overall genetic contribution; GWAS identify the specific loci behind it", "correct": true,
+       "feedback": "Right. Heritability says how much genes matter; GWAS say which variants, where, and with what effect."},
+      {"answer": "Heritability is measured in individuals; GWAS are measured in populations", "correct": false,
+       "feedback": "Both are population-level. Heritability cannot be applied to individuals, and GWAS compare groups of people."},
+      {"answer": "Heritability only applies to rare diseases", "correct": false,
+       "feedback": "Heritability applies to any trait, and is especially useful for common, complex ones."},
+      {"answer": "GWAS measure environmental effects", "correct": false,
+       "feedback": "GWAS test genetic variants. Environmental factors may be included as covariates, but they are not what a GWAS discovers."}
+    ]
+  },
+  {
+    "question": "In a GWAS, why do the genome-wide significant loci usually explain less variance than the SNP-heritability?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Many SNPs have real effects that are too small to pass the significance threshold in a given study", "correct": true,
+       "feedback": "Right. Those effects still contribute to SNP-heritability. Larger GWAS detect more of them."},
+      {"answer": "Significant loci are always false positives", "correct": false,
+       "feedback": "Genome-wide significant loci that replicate are real associations. The gap comes from the many smaller effects below the threshold."},
+      {"answer": "SNP-heritability includes environmental variance", "correct": false,
+       "feedback": "SNP-heritability is a genetic quantity: the variance explained by common SNPs."},
+      {"answer": "GWAS cannot test common variants", "correct": false,
+       "feedback": "Common variants are exactly what GWAS are designed to test."}
+    ]
+  },
+  {
+    "question": "What does 'polygenicity' describe?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "How many genetic loci contribute to a trait", "correct": true,
+       "feedback": "Right. Highly polygenic traits, such as height or type 2 diabetes, are influenced by hundreds to thousands of loci."},
+      {"answer": "How many alleles a single locus has", "correct": false,
+       "feedback": "That is the number of alleles at a locus (for example, biallelic SNPs). Polygenicity is about the number of loci."},
+      {"answer": "How strongly one gene affects a trait", "correct": false,
+       "feedback": "That is the effect size of one locus. Polygenicity is about how many loci are involved."},
+      {"answer": "The proportion of variance due to genes", "correct": false,
+       "feedback": "That is heritability. Polygenicity counts loci, not variance."}
+    ]
+  },
+  {
+    "question": "What are GWAS summary statistics?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A table with one row per SNP giving its position, alleles, effect size, standard error and P-value", "correct": true,
+       "feedback": "Right. They summarize the association test at every SNP and are the raw material for polygenic risk scores."},
+      {"answer": "The individual genotypes of every study participant", "correct": false,
+       "feedback": "Summary statistics contain no individual-level data, which is one reason they can be shared publicly."},
+      {"answer": "A list of only the genome-wide significant SNPs", "correct": false,
+       "feedback": "Full summary statistics include every tested SNP, significant or not; PRS often use many non-significant SNPs."},
+      {"answer": "The average trait value in cases and controls", "correct": false,
+       "feedback": "Summary statistics are per-SNP association results, not group means of the trait."}
+    ]
+  },
+  {
+    "question": "How is a polygenic risk score built from GWAS summary statistics?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Each risk allele a person carries is weighted by its effect size, and the weighted alleles are summed", "correct": true,
+       "feedback": "Right. PRS = Σ βⱼGⱼ, with the βⱼ taken from the summary statistics and the Gⱼ from the person's genotypes."},
+      {"answer": "The P-values of all SNPs are multiplied together", "correct": false,
+       "feedback": "P-values measure statistical evidence, not effect size. A PRS uses effect sizes (β)."},
+      {"answer": "The number of significant loci is counted", "correct": false,
+       "feedback": "That is a property of the GWAS, not of a person. A PRS is computed for one individual from their genotypes."},
+      {"answer": "The person's genome is compared with the reference genome", "correct": false,
+       "feedback": "A PRS does not count differences from the reference; it weights the person's risk alleles by GWAS effect sizes."}
+    ]
+  }
+]
