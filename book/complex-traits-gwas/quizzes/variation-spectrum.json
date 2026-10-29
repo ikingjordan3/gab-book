@@ -56,13 +56,13 @@
     ]
   },
   {
-    "question": "A patient carries both copies of a pathogenic CFTR variant. Another person carries many common risk alleles for coronary artery disease. Which statement is correct?",
+    "question": "A patient carries both copies of a pathogenic CFTR variant. Another person carries many common risk alleles for type 2 diabetes. Which statement is correct?",
     "type": "multiple_choice",
     "answers": [
-      {"answer": "The CFTR result supports a diagnosis; the coronary result only shifts the probability of disease", "correct": true,
+      {"answer": "The CFTR result supports a diagnosis; the diabetes result only shifts the probability of disease", "correct": true,
        "feedback": "Right. Monogenic disease genetics is largely deterministic, while risk for a polygenic disease is probabilistic."},
       {"answer": "Both results give a firm diagnosis", "correct": false,
-       "feedback": "Common risk alleles each have small effects and low penetrance; many carriers of many risk alleles never develop coronary artery disease."},
+       "feedback": "Common risk alleles each have small effects and low penetrance; many carriers of many risk alleles never develop type 2 diabetes."},
       {"answer": "Both results only shift the probability of disease", "correct": false,
        "feedback": "Two pathogenic CFTR variants cause cystic fibrosis with high penetrance, so this result is diagnostic."},
       {"answer": "Neither result is informative without a GWAS of the patient", "correct": false,
