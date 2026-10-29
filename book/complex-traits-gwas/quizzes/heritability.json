@@ -1,0 +1,102 @@
+[
+  {
+    "question": "In a population, the phenotypic variance of a trait is 40 and the genetic variance is 10. What is the broad-sense heritability? (Type a number and press Enter.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 0.25, "correct": true,
+       "feedback": "Right. H² = VG / VP = 10 / 40 = 0.25."},
+      {"type": "value", "value": 0.33, "correct": false,
+       "feedback": "That is VG / VE (10 / 30). Heritability divides by the total phenotypic variance, VP = 40."},
+      {"type": "value", "value": 4, "correct": false,
+       "feedback": "That is VP / VG. Heritability is a proportion between 0 and 1: VG / VP."},
+      {"type": "default", "feedback": "Use H² = VG / VP."}
+    ]
+  },
+  {
+    "question": "At one locus, the heterozygote Aa has the same trait value as AA. Which component of genetic variance does this create?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Dominance variance (VD)", "correct": true,
+       "feedback": "Right. Dominance is interaction between the two alleles at one locus, so the heterozygote is not midway between the homozygotes."},
+      {"answer": "Additive variance (VA)", "correct": false,
+       "feedback": "Under a purely additive model, Aa would sit exactly midway between aa and AA."},
+      {"answer": "Epistatic variance (VI)", "correct": false,
+       "feedback": "Epistasis is interaction between different loci. Here the interaction is between the two alleles at one locus."},
+      {"answer": "Environmental variance (VE)", "correct": false,
+       "feedback": "This pattern is a property of the genotypes at the locus, not of the environment."}
+    ]
+  },
+  {
+    "question": "Why does narrow-sense heritability (h²) predict how much offspring resemble their parents, while broad-sense heritability (H²) does not?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Parents transmit single alleles, so only additive effects are reliably passed on", "correct": true,
+       "feedback": "Right. Dominance and epistatic effects depend on allele combinations that are broken up by segregation and recombination."},
+      {"answer": "Dominance effects are caused by the environment", "correct": false,
+       "feedback": "Dominance is genetic: an interaction between the two alleles at a locus. It is just not reliably transmitted."},
+      {"answer": "H² is always smaller than h²", "correct": false,
+       "feedback": "It is the other way round: H² includes all genetic variance, so H² ≥ h²."},
+      {"answer": "Offspring inherit their parents' complete genotypes", "correct": false,
+       "feedback": "Each parent passes on only one allele per locus, so genotypes, and the interactions within them, are reshuffled each generation."}
+    ]
+  },
+  {
+    "question": "In a twin study, the correlation for a trait is 0.70 in MZ twins and 0.45 in DZ twins. Using the ACE model, what is a² (the heritability)? (Type a number and press Enter.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 0.5, "correct": true,
+       "feedback": "Right. a² = 2(rMZ − rDZ) = 2(0.70 − 0.45) = 0.50. The other components are c² = 2(0.45) − 0.70 = 0.20 and e² = 1 − 0.70 = 0.30."},
+      {"type": "value", "value": 0.25, "correct": false,
+       "feedback": "That is rMZ − rDZ. DZ twins share half the additive variance, so the difference is ½a²: multiply by 2."},
+      {"type": "value", "value": 0.7, "correct": false,
+       "feedback": "rMZ = a² + c², so it also includes the shared environment. Use a² = 2(rMZ − rDZ)."},
+      {"type": "value", "value": 0.3, "correct": false,
+       "feedback": "That is e² = 1 − rMZ, the unique environment. a² = 2(rMZ − rDZ)."},
+      {"type": "default", "feedback": "Use Falconer's formula: a² = 2(rMZ − rDZ)."}
+    ]
+  },
+  {
+    "question": "In the ACE model, why is the DZ twin correlation ½a² + c² rather than a² + c²?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "DZ twins share on average half of the additive genetic variance, but all of the family environment", "correct": true,
+       "feedback": "Right. Like any full siblings, DZ twins share half their segregating alleles on average, and they grow up in the same family."},
+      {"answer": "DZ twins share half of their family environment", "correct": false,
+       "feedback": "The model assumes DZ twins share their family environment as fully as MZ twins (the equal environments assumption). The ½ applies to the genes."},
+      {"answer": "DZ twins are born at different times", "correct": false,
+       "feedback": "DZ twins are born together; that is why they make a good comparison with MZ twins."},
+      {"answer": "Unique environment counts twice for DZ twins", "correct": false,
+       "feedback": "Unique environment (e²) is not shared by either kind of twin, so it does not appear in either correlation."}
+    ]
+  },
+  {
+    "question": "The heritability of height is about 0.8, yet average height has risen substantially over the past century. How can both be true?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Heritability describes variation within a population under current conditions; it does not stop environmental change from shifting the average", "correct": true,
+       "feedback": "Right. Better nutrition and health raised everyone's height. High heritability is not genetic determination."},
+      {"answer": "The heritability estimate must be wrong", "correct": false,
+       "feedback": "Both facts are well established. They are compatible because heritability is about variation, not about the average."},
+      {"answer": "Height genes have changed over the past century", "correct": false,
+       "feedback": "A century is far too short for allele frequencies to change enough to explain the rise. The environment changed."},
+      {"answer": "A heritability of 0.8 means 80% of each person's height is genetic", "correct": false,
+       "feedback": "Heritability is a population-level statistic about differences between people; it cannot be split within one person."}
+    ]
+  },
+  {
+    "question": "The heritability of trait X is 0.5. Which statement is correct?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "In this population, half of the variation in trait X between people is associated with genetic differences", "correct": true,
+       "feedback": "Right. Heritability is a population-level statistic about variance."},
+      {"answer": "For each person, half of their trait X is caused by genes and half by environment", "correct": false,
+       "feedback": "This is the classic misreading. For one person, genes and environment are not separable shares."},
+      {"answer": "Trait X will be 0.5 in every population", "correct": false,
+       "feedback": "Heritability depends on the population and its environment, and can differ between populations or change over time."},
+      {"answer": "Trait X cannot be changed by the environment", "correct": false,
+       "feedback": "Heritability does not limit what environmental change can do; see the height example."}
+    ]
+  }
+]
