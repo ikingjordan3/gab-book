@@ -1,0 +1,8 @@
+/* Subtitle under the book title on the home page */
+.book-subtitle {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--pst-color-text-muted);
+  margin-top: -0.6rem;
+  margin-bottom: 1.6rem;
+}
