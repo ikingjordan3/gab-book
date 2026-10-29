@@ -14,7 +14,7 @@
     ]
   },
   {
-    "question": "In a case-control GWAS, allele A is at 40% in cases and 25% in controls. What is the odds ratio for A? (Give two decimal places.)",
+    "question": "In a case-control GWAS, allele A is at 40% in cases and 25% in controls. What is the odds ratio for A? (Give two decimal places and press Enter.)",
     "type": "numeric",
     "precision": 2,
     "answers": [

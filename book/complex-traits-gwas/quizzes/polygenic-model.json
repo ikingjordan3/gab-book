@@ -28,9 +28,9 @@
     ]
   },
   {
-    "question": "A trait is influenced by 50 biallelic loci, each with risk-allele frequency 0.5 and equal effect. What is the mean number of risk alleles a person carries?",
+    "question": "A trait is influenced by 50 biallelic loci, each with risk-allele frequency 0.5 and equal effect. What is the mean number of risk alleles a person carries? (Type a number and press Enter.)",
     "type": "numeric",
-    "precision": 0,
+    "precision": 2,
     "answers": [
       {"type": "value", "value": 50, "correct": true,
        "feedback": "Right. Each person has 2 × 50 = 100 alleles at these loci, and half are risk alleles on average: 2Mp = 2 × 50 × 0.5 = 50."},
