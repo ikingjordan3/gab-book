@@ -90,8 +90,13 @@ where $h^2_\text{SNP}$ is the SNP-heritability estimated from GWAS data ({doc}`g
 
 ## Estimating h² from relatives
 
-Heritability cannot be measured directly: we never observe genetic values. Instead it is estimated from the
-**resemblance between relatives**, because relatives share known proportions of their genetic variance:
+Every method for estimating heritability works the same way: it asks whether people who are more similar
+genetically are also more similar in the trait. The methods differ in how they measure genetic similarity.
+
+One way is from the **resemblance between relatives**, because relatives share known proportions of their
+genetic variance. Another is from genotype data: SNP arrays measure genetic similarity directly, even between
+people who are not related, which gives the SNP-heritability described in {doc}`gwas-to-prs`.
+The table shows what relatives share:
 
 | Relatives | Genetic variance shared |
 |---|---|
