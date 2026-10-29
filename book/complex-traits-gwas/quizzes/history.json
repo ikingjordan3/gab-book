@@ -1,0 +1,86 @@
+[
+  {
+    "question": "Why were linkage studies so successful for disorders such as cystic fibrosis and Huntington's disease?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A single variant of large effect and high penetrance segregates cleanly through families", "correct": true,
+       "feedback": "Right. When one variant almost always causes the disease, it is easy to follow alongside nearby markers in a pedigree."},
+      {"answer": "These diseases are caused by many common variants", "correct": false,
+       "feedback": "Cystic fibrosis and Huntington's disease are monogenic: one gene, with variants of large effect."},
+      {"answer": "Linkage studies test hundreds of thousands of SNPs in unrelated people", "correct": false,
+       "feedback": "That describes a GWAS. Linkage studies use families and follow markers through generations."},
+      {"answer": "The diseases are common in the population", "correct": false,
+       "feedback": "Both diseases are rare. Linkage works well because of large effects in families, not because of high population frequency."}
+    ]
+  },
+  {
+    "question": "Which is NOT a reason why linkage studies failed for common diseases such as diabetes?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Linkage studies cannot be done on the X chromosome", "correct": true,
+       "feedback": "Right, this is not a reason (and it is not true). Linkage failed because of small effects, common variants and heterogeneity."},
+      {"answer": "They are underpowered to detect small effects spread across many loci", "correct": false,
+       "feedback": "This is a real reason. A small effect barely changes who is affected within one family."},
+      {"answer": "Different families can carry different risk variants (heterogeneity)", "correct": false,
+       "feedback": "This is a real reason. Heterogeneity dilutes the signal when families are combined."},
+      {"answer": "Common variants have LD patterns shaped by population history, not just family inheritance", "correct": false,
+       "feedback": "This is a real reason. Population-based association studies are better suited to common variants."}
+    ]
+  },
+  {
+    "question": "A candidate-gene study tests 20 variants and reports any with P < 0.05, without correction. If none of the variants has a real effect, how many 'significant' results are expected by chance?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "About 1", "correct": true,
+       "feedback": "Right. 20 tests × 0.05 = 1 false positive expected. Without multiple-testing correction, chance findings get reported as discoveries."},
+      {"answer": "0", "correct": false,
+       "feedback": "Each test has a 5% chance of P < 0.05 even when there is no effect, so with 20 tests about one false positive is expected."},
+      {"answer": "About 5", "correct": false,
+       "feedback": "5% of 20 tests is 1, not 5."},
+      {"answer": "About 20", "correct": false,
+       "feedback": "Under the null hypothesis only about 5% of tests fall below 0.05: 20 × 0.05 = 1."}
+    ]
+  },
+  {
+    "question": "What was the main contribution of the International HapMap Project to GWAS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It mapped common variants and LD blocks, showing that a subset of SNPs could tag most common variation", "correct": true,
+       "feedback": "Right. Knowing the LD structure meant arrays with a few hundred thousand SNPs could capture most common variation genome-wide."},
+      {"answer": "It produced the first draft of the human genome sequence", "correct": false,
+       "feedback": "That was the Human Genome Project (draft 2001). HapMap catalogued common variation and LD on top of it."},
+      {"answer": "It identified the CFTR gene", "correct": false,
+       "feedback": "CFTR was found by linkage in 1989, long before HapMap."},
+      {"answer": "It showed that candidate gene studies replicate well", "correct": false,
+       "feedback": "Candidate gene studies replicated poorly; HapMap's contribution was a map of common variants and LD."}
+    ]
+  },
+  {
+    "question": "What does it mean that a GWAS is 'hypothesis-free'?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Every genotyped variant is tested, without first choosing genes thought to be involved", "correct": true,
+       "feedback": "Right. A GWAS scans the whole genome, so it can find loci nobody would have guessed."},
+      {"answer": "No statistical test is used", "correct": false,
+       "feedback": "A GWAS runs a statistical test at every variant, with a stringent threshold such as 5 × 10⁻⁸."},
+      {"answer": "The disease being studied does not need to be defined", "correct": false,
+       "feedback": "Cases and controls (or a measured trait) must still be clearly defined; 'hypothesis-free' refers to which variants are tested."},
+      {"answer": "Results do not need to be replicated", "correct": false,
+       "feedback": "Replication in independent samples remains essential, a lesson learned from the candidate-gene era."}
+    ]
+  },
+  {
+    "question": "Which combination best matches the GWAS era?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Unrelated cases and controls, whole genome, common variants of small effect", "correct": true,
+       "feedback": "Right. GWAS compare large samples of unrelated people across the whole genome and are best at finding common, small-effect variants."},
+      {"answer": "Families, genome-wide markers, rare variants of large effect", "correct": false,
+       "feedback": "That describes linkage studies."},
+      {"answer": "Unrelated cases and controls, 1–10 genes chosen in advance, small cohorts", "correct": false,
+       "feedback": "That describes candidate-gene studies."},
+      {"answer": "Families, a few candidate genes, P < 0.05", "correct": false,
+       "feedback": "This mixes features of linkage and candidate-gene studies; GWAS use unrelated individuals and the whole genome."}
+    ]
+  }
+]
