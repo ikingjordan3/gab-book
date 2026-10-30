@@ -14,7 +14,7 @@ kernelspec:
 ```{admonition} Module at a glance
 **Lecture:** Genome-wide association studies &nbsp;·&nbsp; **Prerequisite:** {doc}`covariates`
 
-**After this module you should be able to:** write the linear and logistic regression models used in GWAS, interpret the SNP coefficient β₁ (including e<sup>β₁</sup> as an odds ratio), and describe the summary statistics a GWAS produces.
+**After this module you should be able to:** write the linear and logistic regression models used in GWAS, interpret the SNP coefficient β₁ (including e<sup>β₁</sup> as an odds ratio), compute a P-value from β₁ and its standard error with the Wald test, and describe the summary statistics a GWAS produces.
 ```
 
 {doc}`covariates` showed that a GWAS must account for age, sex and ancestry. The χ² test cannot do that, so
@@ -120,13 +120,85 @@ print(f"beta1 = {beta[1]:.3f}, SE = {se[1]:.3f}, OR = exp(beta1) = {np.exp(beta[
 ```
 
 $e^{\beta_1} = 1.70$, matching the χ² calculation. The regression also gives a **standard error** for β₁, and from
-the ratio $z = \beta_1 / \text{SE}$ a P-value. Adding covariates would simply add columns to `X`.
+the ratio $z = \beta_1 / \text{SE}$ a P-value, as the next section explains. Adding covariates would simply add
+columns to `X`.
 
 ## GWAS statistical analysis
 
 A GWAS consists of running a statistical association analysis of **each individual SNP** with a trait (disease)
 of interest, controlling for covariates. The model is the same at every SNP; only $x_1$ changes. GWAS results
-are the **statistical coefficient values** for the association models run for each SNP.
+are the **statistical coefficient values** for the association models run for each SNP: the estimated effect
+size $\hat\beta_1$, its standard error, and a P-value.
+
+### From β to a P-value: the Wald test
+
+Each SNP is tested against the **null hypothesis** that it has no effect on the trait:
+
+$$
+H_0: \beta_1 = 0
+$$
+
+The estimate $\hat\beta_1$ is never exactly 0, even for a SNP with no effect, because every sample is noisy. The
+**standard error** (SE) measures that noise: how much $\hat\beta_1$ would vary if the study were repeated on a new
+sample of the same size. The **Wald test** asks how many standard errors the estimate lies from 0:
+
+$$
+z = \frac{\hat\beta_1}{\text{SE}(\hat\beta_1)}
+$$
+
+If the null hypothesis is true, $z$ follows a **standard normal distribution**, $N(0, 1)$. The P-value is the
+probability of a $z$ at least as far from 0 as the one observed, in either direction (a **two-sided** test, because
+a risk allele can raise or lower the trait):
+
+$$
+P = 2\,\big[1 - \Phi(|z|)\big]
+$$
+
+where $\Phi$ is the cumulative distribution function of the standard normal. Equivalently, $z^2$ follows a χ²
+distribution with 1 degree of freedom, which is how some software reports the same test. (For linear regression
+the exact null distribution is a *t* distribution, but with GWAS sample sizes it is indistinguishable from the
+normal.)
+
+```{figure} images/wald_test.png
+:alt: Left, the standard normal curve of z under the null hypothesis, with dashed lines at plus and minus 2.5 and both tails shaded; the shaded area is P equals 0.012. Right, minus log10 P rising steeply with the absolute value of z; P equals 0.05 at z of 1.96, P equals 5 times 10 to the minus 8 at z of 5.45, and the TCF7L2 lead SNP at z of 13.
+:width: 100%
+
+Left: under the null hypothesis, z = β/SE follows a standard normal distribution; the two-sided P-value is the
+shaded area in both tails beyond the observed z. Right: −log₁₀(P) rises steeply with |z|.
+```
+
+A useful way to think of $z$ is as a **signal-to-noise ratio**: the effect size is the signal and the standard
+error is the noise. Two consequences follow:
+
+- **The same effect becomes more significant in a larger study.** The standard error shrinks roughly as
+  $1/\sqrt{N}$, so quadrupling the sample size halves the SE and doubles $z$. This is why ever-larger GWAS keep
+  finding new loci with small effects ({doc}`heritability-to-gwas`).
+- **Common variants are tested more precisely than rare ones.** The SE also depends on how many people carry the
+  allele, so at the same β a rare variant gives a larger SE and a smaller $z$.
+
+Try it with the type 2 diabetes example above and with two hypothetical SNPs:
+
+```{code-cell} ipython3
+from scipy.stats import norm
+
+def wald(beta, se):
+    z = beta / se
+    return z, 2 * norm.sf(abs(z))          # two-sided P-value
+
+for label, beta, se in [("example data above", 0.530, 0.065),
+                        ("same beta, study 1/16 the size", 0.530, 0.260),
+                        ("small effect, very large study", 0.050, 0.008)]:
+    z, p = wald(beta, se)
+    print(f"{label:34s} z = {z:5.2f}   P = {p:.1e}")
+```
+
+The same effect size, β = 0.53, is overwhelmingly significant in the example study but only just reaches
+P < 0.05 in a study one-sixteenth the size, while a tiny effect (β = 0.05) is highly significant in a very large
+study.
+
+The thresholds used in {doc}`significance-and-plots` can be written either way: P = 0.05 corresponds to
+|z| = 1.96, and genome-wide significance, P = 5 × 10⁻⁸, corresponds to **|z| = 5.45**. A SNP must have an effect
+estimate more than five and a half standard errors from zero to be declared genome-wide significant.
 
 ## Summary statistics
 

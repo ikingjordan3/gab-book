@@ -1,72 +1,216 @@
 [
-  {
-    "question": "Which regression model would you use for a GWAS of fasting blood glucose measured in mmol/L?",
-    "type": "multiple_choice",
-    "answers": [
-      {"answer": "Linear regression", "correct": true,
-       "feedback": "Right. Fasting glucose is a continuous, quantitative trait."},
-      {"answer": "Logistic regression", "correct": false,
-       "feedback": "Logistic regression is for binary traits such as case/control status. Glucose is measured on a continuous scale."},
-      {"answer": "A χ² test, because it is simplest", "correct": false,
-       "feedback": "A χ² test compares counts in categories and cannot include covariates; it is not suited to a continuous trait."},
-      {"answer": "No model is needed; compare means by eye", "correct": false,
-       "feedback": "A statistical model is needed to estimate the effect, adjust for covariates and obtain a P-value."}
-    ]
-  },
-  {
-    "question": "In an additive GWAS model, what does the allele dosage x₁ = 2 mean?",
-    "type": "multiple_choice",
-    "answers": [
-      {"answer": "The person carries two copies of the effect allele", "correct": true,
-       "feedback": "Right. Dosage counts copies of the effect allele: 0, 1 or 2."},
-      {"answer": "The person is heterozygous", "correct": false,
-       "feedback": "A heterozygote carries one copy of the effect allele, so x₁ = 1."},
-      {"answer": "The SNP has two alleles", "correct": false,
-       "feedback": "All biallelic SNPs have two alleles; dosage is a property of the person's genotype."},
-      {"answer": "The person has the disease", "correct": false,
-       "feedback": "Disease status is the outcome Y. Dosage is the genotype predictor."}
-    ]
-  },
-  {
-    "question": "A logistic-regression GWAS reports β₁ = 0.405 for a SNP. What is the odds ratio per copy of the effect allele? (Give two decimal places and press Enter.)",
-    "type": "numeric",
-    "precision": 3,
-    "answers": [
-      {"type": "value", "value": 1.5, "correct": true,
-       "feedback": "Right. OR = e^β₁ = e^0.405 ≈ 1.50: each copy multiplies the odds of disease by 1.5."},
-      {"type": "value", "value": 0.405, "correct": false,
-       "feedback": "That is β₁ itself, the change in log-odds. Exponentiate it to get the odds ratio: e^0.405."},
-      {"type": "value", "value": 1.405, "correct": false,
-       "feedback": "Adding 1 is not the right conversion. The odds ratio is e^β₁."},
-      {"type": "default", "feedback": "The odds ratio is e^β₁. Use a calculator: e^0.405."}
-    ]
-  },
-  {
-    "question": "Why does logistic regression model the log-odds rather than the probability p directly?",
-    "type": "multiple_choice",
-    "answers": [
-      {"answer": "The log-odds can take any value, so a linear model can't produce impossible probabilities", "correct": true,
-       "feedback": "Right. A straight line in p could go below 0 or above 1; the log-odds ranges from −∞ to +∞."},
-      {"answer": "Probabilities cannot be calculated for disease", "correct": false,
-       "feedback": "The model does give probabilities; it just links them to the predictors through the log-odds."},
-      {"answer": "Odds and probabilities are the same thing", "correct": false,
-       "feedback": "Odds = p / (1 − p), which differs from p, especially when p is large."},
-      {"answer": "It makes the covariates unnecessary", "correct": false,
-       "feedback": "Covariates are still included; the log-odds scale is about how the outcome is modelled."}
-    ]
-  },
-  {
-    "question": "Which of these is NOT usually a column in GWAS summary statistics?",
-    "type": "multiple_choice",
-    "answers": [
-      {"answer": "Each participant's genotype", "correct": true,
-       "feedback": "Right. Summary statistics contain one row per SNP with aggregate results, no individual-level data."},
-      {"answer": "Effect size (β or OR)", "correct": false,
-       "feedback": "The effect size is a core column of summary statistics."},
-      {"answer": "P-value", "correct": false,
-       "feedback": "The P-value is a core column of summary statistics."},
-      {"answer": "Chromosome and position", "correct": false,
-       "feedback": "Location information is needed to plot and interpret the results."}
-    ]
-  }
+ {
+  "question": "Which regression model would you use for a GWAS of fasting blood glucose measured in mmol/L?",
+  "type": "multiple_choice",
+  "answers": [
+   {
+    "answer": "Linear regression",
+    "correct": true,
+    "feedback": "Right. Fasting glucose is a continuous, quantitative trait."
+   },
+   {
+    "answer": "Logistic regression",
+    "correct": false,
+    "feedback": "Logistic regression is for binary traits such as case/control status. Glucose is measured on a continuous scale."
+   },
+   {
+    "answer": "A χ² test, because it is simplest",
+    "correct": false,
+    "feedback": "A χ² test compares counts in categories and cannot include covariates; it is not suited to a continuous trait."
+   },
+   {
+    "answer": "No model is needed; compare means by eye",
+    "correct": false,
+    "feedback": "A statistical model is needed to estimate the effect, adjust for covariates and obtain a P-value."
+   }
+  ]
+ },
+ {
+  "question": "In an additive GWAS model, what does the allele dosage x₁ = 2 mean?",
+  "type": "multiple_choice",
+  "answers": [
+   {
+    "answer": "The person carries two copies of the effect allele",
+    "correct": true,
+    "feedback": "Right. Dosage counts copies of the effect allele: 0, 1 or 2."
+   },
+   {
+    "answer": "The person is heterozygous",
+    "correct": false,
+    "feedback": "A heterozygote carries one copy of the effect allele, so x₁ = 1."
+   },
+   {
+    "answer": "The SNP has two alleles",
+    "correct": false,
+    "feedback": "All biallelic SNPs have two alleles; dosage is a property of the person's genotype."
+   },
+   {
+    "answer": "The person has the disease",
+    "correct": false,
+    "feedback": "Disease status is the outcome Y. Dosage is the genotype predictor."
+   }
+  ]
+ },
+ {
+  "question": "A logistic-regression GWAS reports β₁ = 0.405 for a SNP. What is the odds ratio per copy of the effect allele? (Give two decimal places and press Enter.)",
+  "type": "numeric",
+  "precision": 3,
+  "answers": [
+   {
+    "type": "value",
+    "value": 1.5,
+    "correct": true,
+    "feedback": "Right. OR = e^β₁ = e^0.405 ≈ 1.50: each copy multiplies the odds of disease by 1.5."
+   },
+   {
+    "type": "value",
+    "value": 0.405,
+    "correct": false,
+    "feedback": "That is β₁ itself, the change in log-odds. Exponentiate it to get the odds ratio: e^0.405."
+   },
+   {
+    "type": "value",
+    "value": 1.405,
+    "correct": false,
+    "feedback": "Adding 1 is not the right conversion. The odds ratio is e^β₁."
+   },
+   {
+    "type": "default",
+    "feedback": "The odds ratio is e^β₁. Use a calculator: e^0.405."
+   }
+  ]
+ },
+ {
+  "question": "A GWAS reports β = 0.10 with a standard error of 0.02 for a SNP. What is the Wald statistic z? (Type a number and press Enter.)",
+  "type": "numeric",
+  "precision": 2,
+  "answers": [
+   {
+    "type": "value",
+    "value": 5,
+    "correct": true,
+    "feedback": "Right. z = β / SE = 0.10 / 0.02 = 5: the estimate is five standard errors from zero."
+   },
+   {
+    "type": "value",
+    "value": 0.002,
+    "correct": false,
+    "feedback": "That is β × SE. The Wald statistic is the ratio β / SE."
+   },
+   {
+    "type": "value",
+    "value": 0.2,
+    "correct": false,
+    "feedback": "That is SE / β. The Wald statistic is β / SE."
+   },
+   {
+    "type": "default",
+    "feedback": "The Wald statistic is z = β / SE."
+   }
+  ]
+ },
+ {
+  "question": "For the same SNP (z = 5, P ≈ 5.7 × 10⁻⁷), which statement is correct?",
+  "type": "multiple_choice",
+  "answers": [
+   {
+    "answer": "It is not genome-wide significant, because genome-wide significance needs |z| > 5.45",
+    "correct": true,
+    "feedback": "Right. P = 5 × 10⁻⁸ corresponds to |z| = 5.45, so z = 5 falls just short. It would count as a suggestive association."
+   },
+   {
+    "answer": "It is genome-wide significant, because z is greater than 1.96",
+    "correct": false,
+    "feedback": "|z| > 1.96 corresponds to P < 0.05, the threshold for a single test, not for a million tests."
+   },
+   {
+    "answer": "It is genome-wide significant, because P is less than 10⁻⁵",
+    "correct": false,
+    "feedback": "P < 10⁻⁵ is a suggestive threshold. Genome-wide significance requires P < 5 × 10⁻⁸."
+   },
+   {
+    "answer": "Its significance cannot be judged without the odds ratio",
+    "correct": false,
+    "feedback": "The P-value comes from β / SE alone; the odds ratio e^β describes the size of the effect, not its significance."
+   }
+  ]
+ },
+ {
+  "question": "Two GWAS of the same trait estimate the same β for a SNP, but study B is four times larger than study A. How does z in study B compare with study A?",
+  "type": "multiple_choice",
+  "answers": [
+   {
+    "answer": "About twice as large, because the SE shrinks roughly as 1/√N",
+    "correct": true,
+    "feedback": "Right. Four times the sample size halves the standard error, which doubles z = β / SE."
+   },
+   {
+    "answer": "About four times as large",
+    "correct": false,
+    "feedback": "The SE shrinks as 1/√N, not 1/N, so z grows with √4 = 2."
+   },
+   {
+    "answer": "The same, because β is the same",
+    "correct": false,
+    "feedback": "z depends on the SE as well as β, and the SE is smaller in the larger study."
+   },
+   {
+    "answer": "Smaller, because larger studies are noisier",
+    "correct": false,
+    "feedback": "Larger studies estimate β more precisely, so the SE is smaller and z is larger."
+   }
+  ]
+ },
+ {
+  "question": "Why does logistic regression model the log-odds rather than the probability p directly?",
+  "type": "multiple_choice",
+  "answers": [
+   {
+    "answer": "The log-odds can take any value, so a linear model can't produce impossible probabilities",
+    "correct": true,
+    "feedback": "Right. A straight line in p could go below 0 or above 1; the log-odds ranges from −∞ to +∞."
+   },
+   {
+    "answer": "Probabilities cannot be calculated for disease",
+    "correct": false,
+    "feedback": "The model does give probabilities; it just links them to the predictors through the log-odds."
+   },
+   {
+    "answer": "Odds and probabilities are the same thing",
+    "correct": false,
+    "feedback": "Odds = p / (1 − p), which differs from p, especially when p is large."
+   },
+   {
+    "answer": "It makes the covariates unnecessary",
+    "correct": false,
+    "feedback": "Covariates are still included; the log-odds scale is about how the outcome is modelled."
+   }
+  ]
+ },
+ {
+  "question": "Which of these is NOT usually a column in GWAS summary statistics?",
+  "type": "multiple_choice",
+  "answers": [
+   {
+    "answer": "Each participant's genotype",
+    "correct": true,
+    "feedback": "Right. Summary statistics contain one row per SNP with aggregate results, no individual-level data."
+   },
+   {
+    "answer": "Effect size (β or OR)",
+    "correct": false,
+    "feedback": "The effect size is a core column of summary statistics."
+   },
+   {
+    "answer": "P-value",
+    "correct": false,
+    "feedback": "The P-value is a core column of summary statistics."
+   },
+   {
+    "answer": "Chromosome and position",
+    "correct": false,
+    "feedback": "Location information is needed to plot and interpret the results."
+   }
+  ]
+ }
 ]
