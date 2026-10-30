@@ -17,9 +17,19 @@ kernelspec:
 **After this module you should be able to:** read a Q-Q plot and the genomic inflation factor λ, explain the genome-wide significance threshold of 5 × 10⁻⁸, and read GWAS summary statistics, Manhattan plots and LocusZoom plots.
 ```
 
-A GWAS produces a P-value for every SNP, often millions of them. This module covers how to check that those
-P-values can be trusted, how to decide which ones are significant, and how to display the results. The examples
-use a simulated type 2 diabetes GWAS with peaks at real, well-known T2D loci.
+A GWAS produces a P-value for every SNP, often millions of them. As {doc}`association-models` showed, each one
+comes from a **Wald test** of the SNP's effect size: the estimate is divided by its standard error,
+
+$$
+z = \frac{\hat\beta}{\text{SE}(\hat\beta)}
+$$
+
+and $z$ is compared with a standard normal distribution, the distribution expected if the SNP has no effect. The
+further $z$ is from 0, the smaller the P-value: |z| = 1.96 gives P = 0.05, and |z| = 5.45 gives P = 5 × 10⁻⁸.
+
+This module covers how to check that those P-values can be trusted, how to decide which ones are significant,
+and how to display the results. The examples use a simulated type 2 diabetes GWAS with peaks at real,
+well-known T2D loci.
 
 ## Q-Q plots: checking the whole study
 
@@ -102,7 +112,7 @@ $$
 p = \frac{0.05}{1 \times 10^6} = 5 \times 10^{-8}
 $$
 
-This is the conventional **genome-wide significance** threshold. Less stringent **suggestive** cutoffs
+This is the conventional **genome-wide significance** threshold, equivalent to |z| > 5.45 in the Wald test. Less stringent **suggestive** cutoffs
 (P = 10⁻⁵ or 10⁻⁶) are used in discovery cohorts, to pick SNPs for follow-up, or in polygenic risk score
 development, where including many weaker SNPs can improve prediction.
 
@@ -128,7 +138,8 @@ EAF = effect-allele frequency). EAF, β, SE and P are simulated to match the Man
 - **CHR + POS** give the position on the x-axis of a Manhattan plot.
 - **−log₁₀(P)** gives the height on the y-axis.
 - **β (ln OR) and SE** give the effect size and its precision. For example, *TCF7L2* β = 0.315 corresponds to
-  OR = e<sup>0.315</sup> ≈ 1.37 per T allele, and z = β/SE = 13.
+  OR = e<sup>0.315</sup> ≈ 1.37 per T allele, and the Wald statistic z = β/SE = 0.315/0.0243 ≈ 13, which gives
+  the P-value in the last column.
 
 ## Manhattan plots
 
