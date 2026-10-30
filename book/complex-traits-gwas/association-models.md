@@ -132,7 +132,7 @@ are the **statistical coefficient values** for the association models run for ea
 
 The collected results are the GWAS **summary statistics**: a summary of all associations between variants (SNPs)
 and the trait, with the results of the statistical analysis for each SNP genome-wide. They are used to derive
-polygenic risk scores ({doc}`gwas-to-prs`). Each row describes one SNP:
+polygenic risk scores ({doc}`heritability-to-gwas`) and to estimate SNP-heritability ({doc}`snp-heritability`). Each row describes one SNP:
 
 | Variant (SNP) location information | GWAS analysis results (statistical coefficients) |
 |---|---|
