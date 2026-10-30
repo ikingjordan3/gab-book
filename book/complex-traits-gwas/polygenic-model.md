@@ -111,7 +111,7 @@ the phenotype is continuous. A single large-effect variant breaks the first cond
 connects back to {doc}`variation-spectrum`.
 
 The genetic score here is essentially what a **polygenic risk score** estimates, with each allele
-weighted by its effect size from a GWAS ({doc}`gwas-to-prs`).
+weighted by its effect size from a GWAS ({doc}`heritability-to-gwas`, {doc}`../polygenic-risk-scores/index`).
 
 ## Common disease: the liability-threshold model
 

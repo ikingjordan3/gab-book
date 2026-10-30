@@ -19,13 +19,13 @@ parts:
           - file: complex-traits-gwas/polygenic-model
           - file: complex-traits-gwas/history
           - file: complex-traits-gwas/heritability
-          - file: complex-traits-gwas/gwas-to-prs
           - file: complex-traits-gwas/heritability-to-gwas
           - file: complex-traits-gwas/case-control-design
           - file: complex-traits-gwas/odds-ratios
           - file: complex-traits-gwas/covariates
           - file: complex-traits-gwas/association-models
           - file: complex-traits-gwas/significance-and-plots
+          - file: complex-traits-gwas/snp-heritability
           - file: complex-traits-gwas/lab-single-snp-association
       - file: polygenic-risk-scores/index
       - file: cancer-genomics/index

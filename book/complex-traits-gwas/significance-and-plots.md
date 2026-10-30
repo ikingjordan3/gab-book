@@ -84,7 +84,7 @@ test statistic by 1.2 to mimic population stratification.
    panel 2.
 
 One caveat: in very large GWAS of highly polygenic traits, λ can exceed 1 **without any confounding**, because
-thousands of SNPs carry small true effects. LD score regression ({doc}`gwas-to-prs`) separates polygenic signal
+thousands of SNPs carry small true effects. LD score regression ({doc}`snp-heritability`) separates polygenic signal
 (the slope) from confounding (the intercept).
 
 ## Statistical significance thresholds

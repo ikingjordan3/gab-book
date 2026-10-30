@@ -12,14 +12,31 @@ kernelspec:
 # From heritability to GWAS
 
 ```{admonition} Module at a glance
-**Lecture:** Genome-wide association studies &nbsp;·&nbsp; **Prerequisite:** {doc}`gwas-to-prs`
+**Lecture:** Both lectures (end of *Genetics of complex, common disease*; start of *Genome-wide association studies*)
+&nbsp;·&nbsp; **Prerequisite:** {doc}`heritability`
 
-**After this module you should be able to:** connect heritability to the specific loci found by GWAS, describe what GWAS reveal about the genetic architecture of a trait, and explain what GWAS summary statistics are.
+**After this module you should be able to:** describe what a GWAS looks for, connect heritability to the specific loci GWAS find, describe what GWAS reveal about genetic architecture, and explain how GWAS results feed SNP-heritability and polygenic risk scores.
 ```
 
-This module opens the second lecture of the chapter. The first lecture ended with the idea of a GWAS
-({doc}`gwas-to-prs`); the rest of the chapter works through how a GWAS is actually done, from study design
-to reading the results.
+The modules so far established that complex traits are heritable and that their genetic basis is many variants
+of small effect. This module bridges the chapter's two lectures. It introduces the tool that finds those
+variants, the **genome-wide association study (GWAS)**, and previews what GWAS results are used for. The rest of
+the chapter works through how a GWAS is done, from study design to reading the results.
+
+## How do we study complex traits that are heritable?
+
+**Genome-wide association studies (GWAS)** seek to identify the single nucleotide polymorphisms (SNPs) that are
+common in the human genome and contribute to the variance in observed phenotypes. Very simply, this means finding
+**SNPs that vary in frequency between cases and controls**.
+
+At each of hundreds of thousands to millions of SNPs, a GWAS asks whether one allele is more common in people
+with the disease (cases) than in people without it (controls). For each SNP it reports:
+
+- an **effect size** ($\beta$, or an odds ratio for a disease), which says how much each copy of the allele
+  changes the trait or the risk; and
+- a **P-value**, which says how surprising an association that strong would be if the SNP had no effect.
+
+{doc}`case-control-design` and {doc}`odds-ratios` show how these numbers are computed for one SNP.
 
 ## Heritability and GWAS
 
@@ -30,7 +47,7 @@ Heritability and GWAS answer two different questions about the same genetic vari
 - **GWAS** discover and quantify the **specific** genetic factors, loci and variants, that drive heritability.
   The results can be used
   - **individually**, as variant–trait associations, each with its own effect size and P-value; and
-  - **collectively**, to build polygenic risk scores (PRS) and to estimate SNP-heritability.
+  - **collectively**, to estimate SNP-heritability and to build polygenic risk scores (PRS).
 
 You can think of the variance of a trait as a set of nested pieces:
 
@@ -42,10 +59,16 @@ How trait variance divides up, from all differences between people down to the l
 Bar widths are illustrative.
 ```
 
-Each step down the figure is a smaller slice. Heritability is part of the phenotypic variance; SNP-heritability
-is the part of heritability captured by common SNPs; and the **genome-wide significant loci** are the part of
-SNP-heritability whose effects are large enough, in a given study, to pass the significance threshold. As GWAS
-grow larger, more small effects pass the threshold and the bottom bar grows toward the one above it.
+Each step down the figure is a smaller slice. Heritability is part of the phenotypic variance.
+**SNP-heritability** ($h^2_\text{SNP}$) is the part of heritability captured by the common variants included in a
+study; it can be estimated from GWAS data, as {doc}`snp-heritability` explains. The **genome-wide significant
+loci** are the part of SNP-heritability whose effects are large enough, in a given study, to pass the significance
+threshold. As GWAS grow larger, more small effects pass the threshold and the bottom bar grows toward the one
+above it. In general,
+
+$$
+h^2_\text{SNP} \;\le\; h^2 \;\le\; H^2
+$$
 
 ## GWAS and genetic architecture
 
@@ -57,28 +80,34 @@ For each trait, the trait-associated variants tell us:
 - **how much** of the variance they explain, individually and together.
 
 Large GWAS have shown that most common traits and diseases are highly polygenic. Type 2 diabetes, the running
-example in this lecture, has more than 600 associated loci in a multi-ancestry GWAS of 2.5 million people
+example in this chapter, has more than 600 associated loci in a multi-ancestry GWAS of 2.5 million people
 (Suzuki et al., [2024](https://doi.org/10.1038/s41586-024-07019-6)), and for adult height a GWAS of about 5 million
 people identified over 12,000 independent associated SNPs (Yengo et al.,
 [2022](https://doi.org/10.1038/s41586-022-05275-y)). Each of these variants changes the trait only slightly;
 it is their combined effect that matters.
 
-## From GWAS to polygenic risk: summary statistics
+## From GWAS to polygenic risk
 
 A GWAS tests every SNP and reports the result for each one. The complete table of results is called the GWAS
-**summary statistics**: a summary of the statistical association tests for all loci genome-wide, with one row
-per SNP giving its position, its alleles, its effect size and standard error, and its P-value.
-{doc}`significance-and-plots` shows what such a table looks like and how it is drawn as a Manhattan plot.
+**summary statistics**: one row per SNP giving its position, its alleles, its effect size and standard error,
+and its P-value ({doc}`association-models`, {doc}`significance-and-plots`). Summary statistics are usually shared
+publicly, and they make GWAS results reusable.
 
-Summary statistics are what make GWAS results reusable. They are usually shared publicly, and they are the raw
-material for polygenic risk scores:
+In particular, they are the raw material for **polygenic risk**, which quantifies a person's overall genetic
+liability for a trait or disease, in the sense of the liability-threshold model ({doc}`polygenic-model`). A
+**polygenic risk score (PRS)** is the weighted sum of the risk alleles a person carries,
 
-- a PRS provides a single **point estimate of the genetic risk** (liability) for a trait or disease that a GWAS
-  has studied; and
-- it can be used to make predictions about the trait from a **personal genome sequence** or genotype data, by
-  weighting each allele the person carries by its effect size from the summary statistics.
+$$
+\text{PRS} = \sum_j \beta_j \, G_j
+$$
 
-{doc}`../polygenic-risk-scores/index` builds on this in detail.
+where $\beta_j$ is the GWAS effect size of SNP $j$ and $G_j$ is the number of risk alleles (0, 1 or 2) the person
+carries at SNP $j$. It is the genetic score of {doc}`polygenic-model`, with each allele weighted by its effect.
+Like everything else in common-disease genetics, a PRS is **probabilistic**: it shifts a person's chance of
+disease without saying who will become ill.
+
+Polygenic risk scores are the subject of the next chapter, {doc}`../polygenic-risk-scores/index`, which covers how
+they are built, evaluated and used, and their limitations.
 
 ## Self-check
 

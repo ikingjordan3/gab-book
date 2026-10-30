@@ -86,7 +86,7 @@ $$
 h^2_\text{SNP} \;\le\; h^2 \;\le\; H^2
 $$
 
-where $h^2_\text{SNP}$ is the SNP-heritability estimated from GWAS data ({doc}`gwas-to-prs`).
+where $h^2_\text{SNP}$ is the SNP-heritability estimated from GWAS data ({doc}`snp-heritability`).
 
 ## Estimating h² from relatives
 
@@ -95,7 +95,7 @@ genetically are also more similar in the trait. The methods differ in how they m
 
 One way is from the **resemblance between relatives**, because relatives share known proportions of their
 genetic variance. Another is from genotype data: SNP arrays measure genetic similarity directly, even between
-people who are not related, which gives the SNP-heritability described in {doc}`gwas-to-prs`.
+people who are not related, which gives the SNP-heritability described in {doc}`snp-heritability`.
 The table shows what relatives share:
 
 | Relatives | Genetic variance shared |
