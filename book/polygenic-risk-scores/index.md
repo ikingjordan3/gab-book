@@ -10,7 +10,8 @@ data a PRS needs (base data from a GWAS and target data from the people being sc
 quality control. The second lecture, *Polygenic risk scores 2*, covers the step in the middle: how GWAS effect sizes are turned
 into PRS weights by shrinkage, thresholding and clumping.
 
-Work through the modules in order. Each one ends with a short self-check quiz.
+Work through the modules in order. Each one ends with a short self-check quiz. The chapter finishes with
+a lab, {doc}`lab-prs`, where you build a polygenic risk score for type 2 diabetes and test how well it works.
 
 | Lecture | Module | After this module you should be able to… |
 |---|---|---|

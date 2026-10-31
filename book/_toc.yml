@@ -39,6 +39,7 @@ parts:
           - file: polygenic-risk-scores/hard-soft-thresholding
           - file: polygenic-risk-scores/shrinkage-methods
           - file: polygenic-risk-scores/clumping-thresholding
+          - file: polygenic-risk-scores/lab-prs
       - file: cancer-genomics/index
       - file: pharmacogenomics/index
       - file: genetic-diversity-pca/index
