@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Why are the QC procedures for PRS more conservative than for a single-SNP analysis?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Small errors can be amplified across the many variants summed into the score", "correct": true,
+       "feedback": "Right. A PRS adds up thousands to millions of SNPs, so systematic errors accumulate."},
+      {"answer": "PRS software cannot handle missing genotypes", "correct": false,
+       "feedback": "Missing genotypes can be handled. The reason for caution is that errors add up across the score."},
+      {"answer": "PRS are only calculated for rare variants", "correct": false,
+       "feedback": "Most PRS use common variants."}
+    ]
+  },
+  {
+    "question": "A GWAS of a trait reports h²SNP = 0.02. According to the tutorial's recommendation, should you build a PRS from it?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "No — the recommendation is to use GWAS with h²SNP > 0.05", "correct": true,
+       "feedback": "Right. With so little variance explained by common SNPs, the PRS would have very low predictive power."},
+      {"answer": "Yes — any heritability is enough", "correct": false,
+       "feedback": "A PRS cannot explain more than the SNP-heritability, so 0.02 sets a very low ceiling. The tutorial recommends h²SNP > 0.05."},
+      {"answer": "Yes, as long as the target sample has more than 100 people", "correct": false,
+       "feedback": "A larger target sample helps power, but it cannot raise the ceiling set by low heritability."}
+    ]
+  },
+  {
+    "question": "Which of these SNPs is strand-ambiguous?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A SNP with alleles C/G", "correct": true,
+       "feedback": "Right. C pairs with G, so a C/G SNP reads C/G on both strands, and the effect allele cannot be confirmed from the alleles alone. A/T SNPs have the same problem."},
+      {"answer": "A SNP with alleles C/T", "correct": false,
+       "feedback": "On the other strand C/T reads G/A, which is distinguishable. Only A/T and C/G SNPs are ambiguous."},
+      {"answer": "A SNP with alleles A/G", "correct": false,
+       "feedback": "A/G on one strand is T/C on the other, which is distinguishable."}
+    ]
+  },
+  {
+    "question": "Base data are on GRCh37 and target data on GRCh38. What should you do?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Convert one data set to the other build (for example with liftOver) before matching variants", "correct": true,
+       "feedback": "Right. The same SNP has different positions on different builds, so positions must be converted first."},
+      {"answer": "Nothing — rsIDs and positions are the same on every build", "correct": false,
+       "feedback": "Positions change between builds, and matching by position would fail or mismatch."},
+      {"answer": "Use only SNPs on chromosome 1", "correct": false,
+       "feedback": "Build differences affect every chromosome."}
+    ]
+  },
+  {
+    "question": "Why must there be no sample overlap between base and target data?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Overlapping people make the PRS look more predictive than it really is", "correct": true,
+       "feedback": "Right. Their own data helped estimate the weights, so the score over-fits them."},
+      {"answer": "Overlapping people make the PRS look less predictive", "correct": false,
+       "feedback": "Overlap inflates, not deflates, apparent performance."},
+      {"answer": "It is a privacy rule with no statistical effect", "correct": false,
+       "feedback": "Overlap has a real statistical effect: over-fitting."}
+    ]
+  }
+]

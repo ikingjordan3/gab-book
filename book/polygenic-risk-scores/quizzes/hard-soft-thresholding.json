@@ -1,0 +1,50 @@
+[
+  {
+    "question": "In hard thresholding, what happens to a SNP whose P-value is above the threshold?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Its effect size is set to zero — it is left out of the score", "correct": true,
+       "feedback": "Right. Hard thresholding keeps SNPs below the threshold at their full GWAS effect and drops the rest."},
+      {"answer": "Its effect size is halved", "correct": false,
+       "feedback": "Partial shrinkage is what soft thresholding does. Hard thresholding is all or nothing."},
+      {"answer": "It is kept at its full GWAS effect size", "correct": false,
+       "feedback": "That happens to SNPs below the threshold."}
+    ]
+  },
+  {
+    "question": "What happens as the P-value threshold is raised from 5 × 10⁻⁸ to 0.05?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "More variants are included, both more causal ones and many more null ones", "correct": true,
+       "feedback": "Right. In this module's simulation the count rose from 8 to 148 variants. The best threshold is chosen in validation data."},
+      {"answer": "Fewer variants are included", "correct": false,
+       "feedback": "A higher (less strict) threshold lets more SNPs through."},
+      {"answer": "Only causal variants are added", "correct": false,
+       "feedback": "A P-value cannot tell causal from null variants for certain; null SNPs also pass more lenient thresholds."}
+    ]
+  },
+  {
+    "question": "What distinguishes soft thresholding from hard thresholding?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It shrinks the effects of all variants toward zero instead of keeping or dropping each one", "correct": true,
+       "feedback": "Right. Examples are LASSO and Bayesian methods such as LDpred."},
+      {"answer": "It uses a lower P-value threshold", "correct": false,
+       "feedback": "Soft thresholding does not rely on a single P-value cut-off at all."},
+      {"answer": "It only uses genome-wide significant SNPs", "correct": false,
+       "feedback": "Soft thresholding typically includes far more variants — millions in genome-wide scores."}
+    ]
+  },
+  {
+    "question": "Under Bayesian shrinkage with a small assumed fraction of causal variants p, what happens to a large, highly significant effect estimate?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It is left almost unchanged, while small, noisy estimates are shrunk almost to zero", "correct": true,
+       "feedback": "Right. With small p the method expects a few real large effects and treats small estimates as noise."},
+      {"answer": "It is shrunk to zero", "correct": false,
+       "feedback": "Large, well-supported estimates are the ones the method keeps."},
+      {"answer": "It is shrunk by the same proportion as every other estimate", "correct": false,
+       "feedback": "That is the behaviour with p = 1, the infinitesimal model."}
+    ]
+  }
+]

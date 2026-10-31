@@ -1,0 +1,68 @@
+[
+  {
+    "question": "Where would you look first for an already-validated polygenic score for type 2 diabetes, with its variants and weights?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The PGS Catalog", "correct": true,
+       "feedback": "Right. The PGS Catalog holds published scores with their scoring files, development details and evaluations."},
+      {"answer": "The GWAS Catalog", "correct": false,
+       "feedback": "The GWAS Catalog holds GWAS associations and summary statistics (base data), not finished scores."},
+      {"answer": "dbSNP", "correct": false,
+       "feedback": "dbSNP catalogues variants and their alleles, not polygenic scores."}
+    ]
+  },
+  {
+    "question": "At SLC30A8 rs13266634, the alternate allele T has OR = 0.89. What is the OR of the risk allele C? (Give two decimal places and press Enter.)",
+    "type": "numeric",
+    "precision": 3,
+    "answers": [
+      {"type": "value", "value": 1.12, "correct": true,
+       "feedback": "Right. Switching alleles inverts the odds ratio: 1 / 0.89 = 1.12."},
+      {"type": "value", "value": 0.89, "correct": false,
+       "feedback": "That is the OR of T. The OR of the other allele is its inverse."},
+      {"type": "value", "value": 0.11, "correct": false,
+       "feedback": "Odds ratios are inverted, not subtracted from 1: 1 / 0.89."},
+      {"type": "default",
+       "feedback": "The OR of the other allele is 1 divided by the OR of this allele."}
+    ]
+  },
+  {
+    "question": "Using the alternate-allele weights β = ln(1.37), ln(0.89) and ln(0.88), what is the PRS of Individual 1, who carries 2, 0 and 1 alternate alleles at rs7903146, rs13266634 and rs1801282? (Give two decimal places and press Enter.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 0.5, "correct": true,
+       "feedback": "Right. 2 × ln(1.37) + 0 × ln(0.89) + 1 × ln(0.88) = 2 × 0.315 + 0 − 0.128 = 0.50."},
+      {"type": "value", "value": 0.63, "correct": false,
+       "feedback": "You have left out the PPARG term: 1 × ln(0.88) = −0.128."},
+      {"type": "value", "value": 3.62, "correct": false,
+       "feedback": "That uses the ORs directly. A PRS sums log odds ratios: β = ln(OR)."},
+      {"type": "default",
+       "feedback": "Multiply each allele count by ln(OR) and add: 2 × ln(1.37) + 0 × ln(0.89) + 1 × ln(0.88)."}
+    ]
+  },
+  {
+    "question": "Which statement about the T2DGGI GWAS (Suzuki et al. 2024) is correct?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "It combined about 2.5 million people, 39.7% of them not of European ancestry", "correct": true,
+       "feedback": "Right. It found 1,289 independent signals at 611 loci, a rich source of base data for new scores."},
+      {"answer": "It is the GWAS used to build PGS000014", "correct": false,
+       "feedback": "PGS000014 (Khera et al. 2018) was built from an earlier, European-ancestry GWAS. T2DGGI was published in 2024."},
+      {"answer": "It studied only people of European ancestry", "correct": false,
+       "feedback": "It was a multi-ancestry meta-analysis; 39.7% of participants were not of European ancestry."}
+    ]
+  },
+  {
+    "question": "The GWAS Catalog reports rs7903146-T with OR 1.36. What convention is it using?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The risk-allele convention: the allele that increases risk, so OR > 1", "correct": true,
+       "feedback": "Right. Many databases report the risk allele. Here T is both the risk allele and the alternate allele, so the two conventions agree."},
+      {"answer": "The reference-allele convention", "correct": false,
+       "feedback": "The reference allele at rs7903146 is C. The catalog reports the risk allele, T."},
+      {"answer": "It reports whichever allele is more common", "correct": false,
+       "feedback": "T is the less common allele at rs7903146 (risk allele frequency about 0.3). The catalog reports the risk allele."}
+    ]
+  }
+]

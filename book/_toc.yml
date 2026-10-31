@@ -28,6 +28,17 @@ parts:
           - file: complex-traits-gwas/snp-heritability
           - file: complex-traits-gwas/lab-single-snp-association
       - file: polygenic-risk-scores/index
+        sections:
+          - file: polygenic-risk-scores/gwas-to-prs
+          - file: polygenic-risk-scores/prs-defined
+          - file: polygenic-risk-scores/risk-stratification
+          - file: polygenic-risk-scores/prs-workflow
+          - file: polygenic-risk-scores/base-target-data
+          - file: polygenic-risk-scores/prs-quality-control
+          - file: polygenic-risk-scores/shrinkage-winners-curse
+          - file: polygenic-risk-scores/hard-soft-thresholding
+          - file: polygenic-risk-scores/shrinkage-methods
+          - file: polygenic-risk-scores/clumping-thresholding
       - file: cancer-genomics/index
       - file: pharmacogenomics/index
       - file: genetic-diversity-pca/index

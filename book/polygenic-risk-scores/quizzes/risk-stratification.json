@@ -1,0 +1,65 @@
+[
+  {
+    "question": "In the top 1% of a type 2 diabetes PRS, 6% of people have type 2 diabetes. If the PRS were used as a diagnostic test that labels everyone in the top 1% as diabetic, what percentage of those labels would be false positives? (Give a whole number and press Enter.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 94, "correct": true,
+       "feedback": "Right. 100% − 6% = 94% of the people flagged do not have type 2 diabetes."},
+      {"type": "value", "value": 6, "correct": false,
+       "feedback": "6% is the fraction who do have type 2 diabetes (true positives). The false positives are the rest."},
+      {"type": "default",
+       "feedback": "Everyone in the top 1% is flagged; only 6% of them actually have the disease. What fraction is wrongly flagged?"}
+    ]
+  },
+  {
+    "question": "Why are PRS scores in a population approximately normally distributed?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "They add up many small, independent allele effects", "correct": true,
+       "feedback": "Right. This is the polygenic model (and the central limit theorem) from Chapter 7."},
+      {"answer": "Software rescales them to a normal distribution", "correct": false,
+       "feedback": "Standardizing changes the mean and SD, not the shape. The normal shape comes from summing many small effects."},
+      {"answer": "Most people carry no risk alleles", "correct": false,
+       "feedback": "Common risk alleles are carried by many people; nearly everyone carries a mix of risk and protective alleles."}
+    ]
+  },
+  {
+    "question": "People in the top 1% of a PRS have 2.5 times the risk of everyone else, but only 6% of them develop the disease. Which statement is correct?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The relative risk is high, but the absolute risk is still low", "correct": true,
+       "feedback": "Right. Relative risk compares groups (2.5×); absolute risk is each person's chance of disease (6%)."},
+      {"answer": "The PRS has a high absolute risk and a low relative risk", "correct": false,
+       "feedback": "Reversed. 2.5× is the relative risk; 6% is the absolute risk."},
+      {"answer": "The PRS has no predictive value", "correct": false,
+       "feedback": "It does stratify risk — 2.5 times higher in the top 1% — it just cannot diagnose individuals."}
+    ]
+  },
+  {
+    "question": "A polygenic score has an AUC of 0.72. What does this mean?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A randomly chosen case has a higher score than a randomly chosen control 72% of the time", "correct": true,
+       "feedback": "Right. That is the definition of the AUC. 0.5 is chance and 1 is perfect separation."},
+      {"answer": "72% of people with a high score will develop the disease", "correct": false,
+       "feedback": "That would be an absolute risk (positive predictive value), which is much lower for a PRS."},
+      {"answer": "The score explains 72% of the variance in disease liability", "correct": false,
+       "feedback": "Variance explained is a different measure, and for a PRS it is far lower (about 3% in this chapter's model)."},
+      {"answer": "The score is wrong 28% of the time for every person", "correct": false,
+       "feedback": "The AUC compares pairs of cases and controls; it is not an error rate for individuals."}
+    ]
+  },
+  {
+    "question": "What is the appropriate use of a PRS in medicine?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Risk stratification, for example earlier intervention or enhanced screening for people at high genetic risk", "correct": true,
+       "feedback": "Right. A PRS shifts the probability of disease, so it is used to target prevention, not to diagnose."},
+      {"answer": "Diagnosing disease in people with symptoms", "correct": false,
+       "feedback": "Diagnosis uses clinical tests (for type 2 diabetes, glucose or HbA1c). A PRS is not diagnostic."},
+      {"answer": "Replacing family history and clinical risk factors", "correct": false,
+       "feedback": "A PRS adds information to these; it does not replace them."}
+    ]
+  }
+]

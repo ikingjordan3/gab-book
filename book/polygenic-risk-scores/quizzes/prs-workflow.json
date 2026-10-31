@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Which data set holds the GWAS summary statistics used to weight a PRS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The base (training) data", "correct": true,
+       "feedback": "Right. Base data are the GWAS results: variants, effect alleles and weights."},
+      {"answer": "The target data", "correct": false,
+       "feedback": "Target data are the individual-level genotypes of the people being scored."},
+      {"answer": "The validation data", "correct": false,
+       "feedback": "Validation data are used to choose between candidate scores; they are individual-level data like the target data."}
+    ]
+  },
+  {
+    "question": "Why must base and target data come from independent samples?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "If the same people are in both, the PRS will look more predictive than it really is", "correct": true,
+       "feedback": "Right. Their own genotypes and phenotypes helped estimate the weights, so the score is over-fitted to them."},
+      {"answer": "Software cannot read two files from the same cohort", "correct": false,
+       "feedback": "The problem is statistical (over-fitting), not technical."},
+      {"answer": "Independent samples always have different ancestry", "correct": false,
+       "feedback": "Independent means no shared (or closely related) individuals; ancestry may or may not differ."}
+    ]
+  },
+  {
+    "question": "In a three-sample design, what is the validation data used for?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "To choose the best of several candidate scores", "correct": true,
+       "feedback": "Right. Khera et al. chose the best of 31 candidate scores by AUC in UK Biobank phase 1."},
+      {"answer": "To estimate the SNP effect sizes", "correct": false,
+       "feedback": "Effect sizes come from the base (training) data, the GWAS."},
+      {"answer": "To report the final performance of the chosen score", "correct": false,
+       "feedback": "That is the job of the testing data, which must not have been used to choose the score."}
+    ]
+  },
+  {
+    "question": "In Khera et al. (2018), which method produced the best type 2 diabetes score, and how many variants did it include?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "LDpred, about 6.9 million variants", "correct": true,
+       "feedback": "Right. LDpred with ρ = 0.01 gave a score with 6,917,436 variants (PGS000014 in the PGS Catalog)."},
+      {"answer": "Pruning and thresholding, about 5,000 variants", "correct": false,
+       "feedback": "For type 2 diabetes the best score included millions of variants, not a few thousand."},
+      {"answer": "Only the genome-wide significant lead SNPs", "correct": false,
+       "feedback": "Genome-wide scores use far more than the significant lead SNPs."}
+    ]
+  },
+  {
+    "question": "The AUC of Khera's type 2 diabetes score was 0.72 in the validation data and 0.73 in the testing data. What does the close agreement suggest?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The chosen score was not over-fitted to the validation data", "correct": true,
+       "feedback": "Right. If choosing the best score had exploited chance features of the validation data, performance would drop in the independent testing data."},
+      {"answer": "The score is good enough to diagnose type 2 diabetes", "correct": false,
+       "feedback": "An AUC of about 0.72 is useful for stratification, not diagnosis (see the risk-stratification module)."},
+      {"answer": "The validation and testing data were the same people", "correct": false,
+       "feedback": "They were separate phases of UK Biobank; that independence is what makes the agreement meaningful."}
+    ]
+  }
+]

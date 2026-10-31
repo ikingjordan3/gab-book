@@ -1,0 +1,54 @@
+[
+  {
+    "question": "What are GWAS summary statistics?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "One row per SNP with its location, alleles, effect size, standard error and P-value", "correct": true,
+       "feedback": "Right. Summary statistics summarize every variant-trait association tested in the GWAS."},
+      {"answer": "The genotypes of every person in the GWAS", "correct": false,
+       "feedback": "Those are individual-level data. Summary statistics contain no information about individual people, which is why they can be shared publicly."},
+      {"answer": "Only the SNPs that pass P < 5 × 10⁻⁸", "correct": false,
+       "feedback": "Full summary statistics include every SNP tested, not just the genome-wide significant ones. A PRS often uses many SNPs below the threshold."},
+      {"answer": "A list of the genes near each GWAS peak", "correct": false,
+       "feedback": "Mapped genes are sometimes added, but summary statistics are the per-SNP statistical results."}
+    ]
+  },
+  {
+    "question": "Which of these is a GWAS analysis result (a statistical coefficient) rather than variant location information?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Standard error", "correct": true,
+       "feedback": "Right. Effect size, standard error and P-value come from the association test; chromosome, position, rsID and alleles locate and describe the variant."},
+      {"answer": "rsID", "correct": false,
+       "feedback": "The rsID is an identifier for the variant, part of its location information."},
+      {"answer": "Chromosome", "correct": false,
+       "feedback": "Chromosome and position say where the variant is."},
+      {"answer": "Alternate allele", "correct": false,
+       "feedback": "The alleles describe the variant itself; the effect size is the result of the test."}
+    ]
+  },
+  {
+    "question": "Why can a polygenic risk score be built without access to the individual-level data from the original GWAS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The summary statistics give the variants, effect alleles and weights the score needs", "correct": true,
+       "feedback": "Right. A PRS needs to know which allele to count at each SNP and how much weight to give it, and both are in the summary statistics."},
+      {"answer": "A PRS only uses the single most significant SNP", "correct": false,
+       "feedback": "A PRS combines many SNPs — that is what 'polygenic' means."},
+      {"answer": "The people being scored must also have been in the GWAS", "correct": false,
+       "feedback": "The opposite: the people being scored (target data) should not overlap with the GWAS (base data). See the quality-control module."}
+    ]
+  },
+  {
+    "question": "Each tower of points above the 5 × 10⁻⁸ line in a Manhattan plot is best described as…",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "A locus: many correlated SNPs carrying the same association signal", "correct": true,
+       "feedback": "Right. SNPs in linkage disequilibrium with a causal variant rise together, so each peak is a locus rather than a single SNP."},
+      {"answer": "A single causal variant", "correct": false,
+       "feedback": "Most points in a tower are SNPs in LD with the causal variant, which is usually not known. This matters for PRS (clumping, in the second lecture)."},
+      {"answer": "A gene that causes the disease", "correct": false,
+       "feedback": "GWAS locate associated regions; which gene (if any) is responsible needs further work."}
+    ]
+  }
+]
