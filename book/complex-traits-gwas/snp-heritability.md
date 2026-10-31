@@ -18,11 +18,12 @@ kernelspec:
 ```
 
 **Heritability** is the proportion of the phenotypic variation in a population that is attributable to genetic
-differences among individuals ({doc}`heritability`). Methods for estimating heritability work the same way: they
-ask whether people who are more similar genetically are also more similar in the trait.
+differences among individuals ({doc}`heritability`). Different methods for estimating heritability work in the same way:
+they ask whether people who are more similar genetically are also more similar in the trait.
 
 GWAS data can be used to estimate heritability: because every participant is genotyped ({doc}`case-control-design`),
-genetic similarity can be **measured** from SNPs rather than inferred from family relationships. The result is
+genetic similarity can be **measured** from SNPs rather than inferred from family relationships (as in
+{doc}`twin studies <heritability>`). The result is
 the **SNP-heritability**, $h^2_\text{SNP}$: the proportion of trait variance explained by the common variants
 included in the study ({doc}`heritability-to-gwas`).
 
