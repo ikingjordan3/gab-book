@@ -17,10 +17,14 @@ kernelspec:
 **After this module you should be able to:** explain how SNP-heritability is estimated from GWAS data with GREML and with LD score regression, compare the strengths and weaknesses of the two methods, and explain why SNP-heritability is lower than twin heritability ("missing heritability").
 ```
 
-{doc}`heritability` estimated heritability from the resemblance between relatives. GWAS data offer a second
-route: because every participant is genotyped, genetic similarity can be **measured** from SNPs rather than
-inferred from family relationships. The result is the **SNP-heritability**, $h^2_\text{SNP}$: the proportion of
-trait variance explained by the common variants included in the study ({doc}`heritability-to-gwas`).
+**Heritability** is the proportion of the phenotypic variation in a population that is attributable to genetic
+differences among individuals ({doc}`heritability`). Methods for estimating heritability work the same way: they
+ask whether people who are more similar genetically are also more similar in the trait.
+
+GWAS data can be used to estimate heritability: because every participant is genotyped ({doc}`case-control-design`),
+genetic similarity can be **measured** from SNPs rather than inferred from family relationships. The result is
+the **SNP-heritability**, $h^2_\text{SNP}$: the proportion of trait variance explained by the common variants
+included in the study ({doc}`heritability-to-gwas`).
 
 ```{figure} images/variance_explained.png
 :alt: Four nested bars. The top bar is all phenotypic variance. Below it, the variance splits into a genetic part (heritability, from twins) and an environmental part. Below the genetic part, common SNPs capture SNP-heritability, and the rest is not tagged by SNP arrays. Below that, only part of the SNP-heritability comes from genome-wide significant GWAS loci; the rest comes from SNPs whose effects are below the significance threshold.
@@ -56,6 +60,20 @@ more similar genetically should also be a little more similar in the trait. GREM
 genetic similarity among unrelated people the way a twin study uses the difference between MZ and DZ twins
 ({doc}`heritability`). Because the people are unrelated, they do not share a family environment, so their
 similarity cannot be explained by growing up together.
+
+At its core this is a regression across **pairs of people**. For each pair, the genetic similarity (their entry in
+the genetic relationship matrix defined below) goes on the x-axis, and their trait similarity (the product of their
+standardized trait values) goes on the y-axis. If the trait is heritable, the points rise from left to right, and
+the slope of the line estimates $h^2_\text{SNP}$.
+
+```{figure} images/greml_intuition.png
+:alt: Schematic scatter plot. The x-axis is genetic similarity of a pair of unrelated people, from minus 0.02 to plus 0.02; the y-axis is their trait similarity. Points, each an average over many pairs, rise along a straight line through the origin; a slope triangle marks the slope as SNP-heritability.
+:width: 520px
+
+The regression behind GREML (simulated). Pairs of unrelated people who are slightly more alike genetically are
+slightly more alike in the trait; the slope is $h^2_\text{SNP}$. Genetic similarity among unrelated people varies
+only by a few hundredths, so very many pairs are needed.
+```
 
 ### The mathematical model
 
@@ -198,6 +216,18 @@ plotted against LD:
 
 - polygenic signal makes the line **slope upward**; and
 - confounding **lifts the whole line**, raising the intercept.
+
+In this regression each point is a **SNP**: its LD score (how much variation it tags, defined below) goes on the
+x-axis, and its association test statistic, χ², from the GWAS ({doc}`association-models`) goes on the y-axis.
+
+```{figure} images/ldsc_intuition.png
+:alt: Schematic scatter plot. The x-axis is the LD score of a SNP, from 0 to 250; the y-axis is mean chi-square. Points, each an average over many SNPs, rise along a solid line from an intercept of 1; the slope is labelled N times SNP-heritability over M. A dashed red parallel line starts higher, at 1.6, showing that confounding raises the intercept.
+:width: 520px
+
+The regression behind LD score regression (simulated). SNPs that tag more of the genome (higher LD score) have
+larger χ² on average; the slope gives $h^2_\text{SNP}$. Without confounding the line starts at χ² = 1, the
+value expected for a SNP with no effect; confounding shifts the whole line up (dashed).
+```
 
 ### The mathematical model
 
