@@ -1,0 +1,63 @@
+[
+  {
+    "question": "Why does clumping keep only one SNP from each group of correlated SNPs?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "SNPs in LD carry the same association signal, so including all of them would count it many times", "correct": true,
+       "feedback": "Right. Clumping keeps the most significant SNP (the index SNP) and drops the SNPs in LD with it."},
+      {"answer": "Correlated SNPs are genotyping errors", "correct": false,
+       "feedback": "LD is a real feature of the genome: nearby SNPs are inherited together."},
+      {"answer": "Only one SNP per chromosome can be causal", "correct": false,
+       "feedback": "A chromosome can carry many causal variants; clumping removes redundancy within an LD region."}
+    ]
+  },
+  {
+    "question": "Which SNP becomes the first index SNP in clumping?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The most significant SNP (largest −log₁₀ P) that passes the threshold", "correct": true,
+       "feedback": "Right. Clumping works down the ranked list, starting with the strongest signal."},
+      {"answer": "The SNP with the largest r² to its neighbours", "correct": false,
+       "feedback": "r² decides which SNPs join a clump; the index SNP is chosen by its P-value."},
+      {"answer": "The SNP at the start of the chromosome", "correct": false,
+       "feedback": "Position does not decide; significance does."}
+    ]
+  },
+  {
+    "question": "In the LocusZoom-style plot, block 3 SNPs are significant but dark blue (r² < 0.2 with index SNP 7). What does clumping do with them?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "They are not in SNP 7's clump; the most significant of them (SNP 13) becomes the next index SNP", "correct": true,
+       "feedback": "Right. Low LD with SNP 7 means they reflect a separate signal, so it gets its own index SNP."},
+      {"answer": "They are dropped because SNP 7 is more significant", "correct": false,
+       "feedback": "Only SNPs in LD with an index SNP (r² above the threshold) are dropped with it."},
+      {"answer": "All of them are added to the PRS", "correct": false,
+       "feedback": "Within block 3 the SNPs are correlated with each other, so only their index SNP is kept."}
+    ]
+  },
+  {
+    "question": "In the clumped simulated T2D GWAS, 26 index SNPs pass P < 5 × 10⁻⁸ and 59 pass P < 10⁻⁵. How many index SNPs are added by relaxing the threshold? (Press Enter after your answer.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 33, "correct": true,
+       "feedback": "Right. 59 − 26 = 33 extra index SNPs, a mix of real sub-threshold signals and chance peaks."},
+      {"type": "value", "value": 85, "correct": false,
+       "feedback": "The 59 already include the 26 from the stricter threshold: 59 − 26."},
+      {"type": "default",
+       "feedback": "The lenient set includes the strict set, so subtract: 59 − 26."}
+    ]
+  },
+  {
+    "question": "How is the P-value threshold for a clumping-and-thresholding PRS usually chosen?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "Empirically: scores are built at several thresholds and compared in validation data", "correct": true,
+       "feedback": "Right. The best threshold differs between traits, so it is chosen from the data."},
+      {"answer": "It is always the genome-wide threshold, 5 × 10⁻⁸", "correct": false,
+       "feedback": "Many of the best scores use far more lenient thresholds, which let in real signals just below genome-wide significance."},
+      {"answer": "It is set by the PGS Catalog", "correct": false,
+       "feedback": "The catalog records scores; it does not set thresholds."}
+    ]
+  }
+]

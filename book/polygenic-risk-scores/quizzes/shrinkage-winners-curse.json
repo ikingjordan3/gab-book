@@ -1,0 +1,53 @@
+[
+  {
+    "question": "What is the winner's curse in GWAS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "SNPs selected because they are significant tend to have over-estimated effect sizes", "correct": true,
+       "feedback": "Right. Selection favours estimates that sampling noise pushed upward, so the reported effects of top hits are too large."},
+      {"answer": "The most significant SNP is always a false positive", "correct": false,
+       "feedback": "Top hits are usually real associations; it is their effect sizes that are inflated."},
+      {"answer": "Large GWAS find fewer significant SNPs than small ones", "correct": false,
+       "feedback": "The opposite. Larger GWAS have more power and also suffer less from the winner's curse."}
+    ]
+  },
+  {
+    "question": "In the auction analogy, what corresponds to a single bid?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The effect size estimate from one GWAS, on one sample from the population", "correct": true,
+       "feedback": "Right. Bids scatter around the true value just as GWAS estimates scatter around the true effect."},
+      {"answer": "The true effect size of the SNP", "correct": false,
+       "feedback": "That is the item's actual value, best approximated by the mean of all the bids."},
+      {"answer": "The P-value threshold", "correct": false,
+       "feedback": "The threshold decides which 'bids' win; it is not a bid."}
+    ]
+  },
+  {
+    "question": "A SNP has true effect β = 0.15. Across all GWAS the estimates average 0.15, but among GWAS where it reached P < 5 × 10⁻⁸ they average 0.21. By what percentage is the selected estimate inflated? (Give a whole number and press Enter.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 40, "correct": true,
+       "feedback": "Right. (0.21 − 0.15) / 0.15 = 0.40, a 40% over-estimate."},
+      {"type": "value", "value": 6, "correct": false,
+       "feedback": "0.06 is the absolute difference. As a percentage of the true effect: 0.06 / 0.15 = 40%."},
+      {"type": "value", "value": 140, "correct": false,
+       "feedback": "0.21 is 140% of 0.15, so it is 40% larger than the true effect."},
+      {"type": "default",
+       "feedback": "Compute (selected − true) / true × 100."}
+    ]
+  },
+  {
+    "question": "Why is using unadjusted GWAS effect sizes in a PRS a problem?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The estimates include noise and overfit the discovery sample, so the PRS is poorly estimated with high variance", "correct": true,
+       "feedback": "Right. This is overfitting, and shrinkage of the effect sizes is the remedy."},
+      {"answer": "Unadjusted effect sizes are always too small", "correct": false,
+       "feedback": "The top hits are usually too large (winner's curse), and many null SNPs get non-zero estimates from noise."},
+      {"answer": "GWAS do not report effect sizes", "correct": false,
+       "feedback": "They do — β or OR for every SNP in the summary statistics."}
+    ]
+  }
+]

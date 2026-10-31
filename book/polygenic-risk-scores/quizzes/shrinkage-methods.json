@@ -1,0 +1,63 @@
+[
+  {
+    "question": "Which shrinkage method reduces small effect sizes to exactly zero?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "LASSO regression", "correct": true,
+       "feedback": "Right. LASSO sets small effects to zero, so it also selects variants."},
+      {"answer": "Ridge regression", "correct": false,
+       "feedback": "Ridge shrinks every effect but never reduces any to exactly zero."},
+      {"answer": "LDpred with p = 1", "correct": false,
+       "feedback": "With p = 1 (infinitesimal model), every variant keeps a non-zero, proportionally shrunk effect."}
+    ]
+  },
+  {
+    "question": "In LDpred, what does the parameter p (called ρ by Khera et al.) represent?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The proportion of variants assumed to be causal (with non-zero effects)", "correct": true,
+       "feedback": "Right. High p is the infinitesimal model (many small effects); low p assumes few variants with larger effects."},
+      {"answer": "The P-value threshold for including SNPs", "correct": false,
+       "feedback": "LDpred does not use a P-value threshold; p is the assumed fraction of causal variants."},
+      {"answer": "The LD (r²) between pairs of variants", "correct": false,
+       "feedback": "LD comes from the reference-panel LD matrix, a separate input."}
+    ]
+  },
+  {
+    "question": "Khera et al.'s type 2 diabetes score used LDpred with ρ = 0.01. Out of 1,000,000 variants, how many does this assume are causal? (Press Enter after your answer.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {"type": "value", "value": 10000, "correct": true,
+       "feedback": "Right. 0.01 × 1,000,000 = 10,000 variants with non-zero effects."},
+      {"type": "value", "value": 1000, "correct": false,
+       "feedback": "That would be ρ = 0.001 (the coronary artery disease score). For ρ = 0.01: 0.01 × 1,000,000."},
+      {"type": "default",
+       "feedback": "Multiply the assumed proportion of causal variants by the number of variants: 0.01 × 1,000,000."}
+    ]
+  },
+  {
+    "question": "Why does LDpred need an LD matrix?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "So that correlated SNPs carrying the same signal are not counted twice", "correct": true,
+       "feedback": "Right. GWAS estimates for SNPs in LD reflect the same causal variant; the LD matrix lets LDpred account for that."},
+      {"answer": "To calculate the P-values of each SNP", "correct": false,
+       "feedback": "P-values come from the GWAS summary statistics."},
+      {"answer": "To identify the effect allele", "correct": false,
+       "feedback": "Effect alleles come from the summary statistics; LD describes correlations between variants."}
+    ]
+  },
+  {
+    "question": "According to the lecture, what most improves the accuracy of a PRS?",
+    "type": "multiple_choice",
+    "answers": [
+      {"answer": "The power of the GWAS used for the effect sizes (data >> methods)", "correct": true,
+       "feedback": "Right. A larger, better-powered base GWAS matters more than the choice between C+T, LASSO or LDpred."},
+      {"answer": "Always using the newest shrinkage method", "correct": false,
+       "feedback": "Shrinkage methods often perform only a little better than clumping and thresholding. Data matter more."},
+      {"answer": "Including as few SNPs as possible", "correct": false,
+       "feedback": "The best number of SNPs depends on the trait; it is chosen empirically in validation data."}
+    ]
+  }
+]
