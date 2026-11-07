@@ -42,5 +42,18 @@ parts:
           - file: polygenic-risk-scores/lab-prs
       - file: cancer-genomics/index
       - file: pharmacogenomics/index
+        sections:
+          - file: pharmacogenomics/pharmacogenomics-defined
+          - file: pharmacogenomics/pharmagenes
+          - file: pharmacogenomics/knowledge-bases
+          - file: pharmacogenomics/cyp2b6-efavirenz
+          - file: pharmacogenomics/cftr-ivacaftor
+          - file: pharmacogenomics/precision-public-health
+          - file: pharmacogenomics/genomics-research-gap
+          - file: pharmacogenomics/colombia
+          - file: pharmacogenomics/ancestry-antioquia-choco
+          - file: pharmacogenomics/pharmasnp-variation
+          - file: pharmacogenomics/from-variants-to-assays
+          - file: pharmacogenomics/lab-pharmacogenomics
       - file: genetic-diversity-pca/index
       - file: genetic-ancestry-admixture/index

@@ -1,0 +1,54 @@
+[
+  {
+    "question": "What distinguishes precision public health from precision medicine?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "The unit of intervention is the population rather than the individual",
+        "correct": true,
+        "feedback": "Right. The genomic input becomes population allele frequencies instead of individual genotypes."
+      },
+      {
+        "answer": "It does not use genomic information",
+        "correct": false,
+        "feedback": "It keeps the genomic input. What changes is the unit it is applied to."
+      },
+      {
+        "answer": "It applies only to infectious disease",
+        "correct": false,
+        "feedback": "Nothing restricts it to infectious disease; the efavirenz case is one example among many."
+      },
+      {
+        "answer": "It replaces clinical care with policy",
+        "correct": false,
+        "feedback": "It is a complement, not a replacement. The argument is that population-level information is affordable and actionable now."
+      }
+    ]
+  },
+  {
+    "question": "Why is the precision medicine model difficult to apply in many health systems?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "It assumes every patient can be genotyped and alternative drugs stocked for each",
+        "correct": true,
+        "feedback": "Right. Both assumptions are expensive, and they are the ones precision public health relaxes."
+      },
+      {
+        "answer": "Genomic variation does not exist in those populations",
+        "correct": false,
+        "feedback": "Genomic variation exists everywhere - and most of the world's diversity is in populations that genomics has studied least."
+      },
+      {
+        "answer": "The underlying biology is different there",
+        "correct": false,
+        "feedback": "The pharmacology is the same. The constraint is cost and infrastructure."
+      },
+      {
+        "answer": "Clinicians there do not accept genomic evidence",
+        "correct": false,
+        "feedback": "The obstacle described is resource-related, not attitudinal."
+      }
+    ]
+  }
+]

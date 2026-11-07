@@ -1,0 +1,80 @@
+[
+  {
+    "question": "Why does ivacaftor help patients with G551D but not patients homozygous for F508del?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Ivacaftor opens channels already at the cell surface; F508del protein never reaches it",
+        "correct": true,
+        "feedback": "Right. G551D is a gating defect - present but shut. F508del is primarily a folding defect, so there is nothing at the membrane to potentiate."
+      },
+      {
+        "answer": "F508del patients do not have cystic fibrosis",
+        "correct": false,
+        "feedback": "F508del is the commonest cause of cystic fibrosis. The issue is the class of defect, not the diagnosis."
+      },
+      {
+        "answer": "Ivacaftor is destroyed by a variant enzyme in F508del patients",
+        "correct": false,
+        "feedback": "That would be a pharmacokinetic explanation. The reason here is in the drug's target."
+      },
+      {
+        "answer": "F508del patients clear ivacaftor too quickly",
+        "correct": false,
+        "feedback": "Clearance is not the issue. The target protein is not in the membrane for the drug to act on."
+      }
+    ]
+  },
+  {
+    "question": "What is the key difference between the efavirenz and ivacaftor prescribing tables?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Genotype changes the dose for efavirenz, but decides whether to prescribe at all for ivacaftor",
+        "correct": true,
+        "feedback": "Right. That is the practical signature of pharmacokinetic versus pharmacodynamic pharmacogenomics."
+      },
+      {
+        "answer": "One is based on evidence and the other is not",
+        "correct": false,
+        "feedback": "Both are CPIC guidelines with graded strengths of recommendation."
+      },
+      {
+        "answer": "Efavirenz uses star alleles and ivacaftor uses metabolizer phenotypes",
+        "correct": false,
+        "feedback": "Efavirenz uses star alleles and metabolizer phenotypes; ivacaftor uses CFTR genotype directly, since the variant is in the target."
+      },
+      {
+        "answer": "Only the ivacaftor table applies to children",
+        "correct": false,
+        "feedback": "Both guidelines cover a defined patient population; that is not the distinction being drawn."
+      }
+    ]
+  },
+  {
+    "question": "In the cystic fibrosis airway, why does mucus become thick and sticky?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Chloride does not leave the cell, so water does not follow and the airway surface liquid is depleted",
+        "correct": true,
+        "feedback": "Right. The periciliary layer collapses, the cilia cannot sweep, and trapped bacteria cause chronic infection."
+      },
+      {
+        "answer": "The mucus-producing cells carry the CFTR variant and make abnormal mucus",
+        "correct": false,
+        "feedback": "The mucus itself is not the primary defect. Its water content is, and that follows chloride transport."
+      },
+      {
+        "answer": "Bacteria in the airway thicken the mucus directly",
+        "correct": false,
+        "feedback": "Bacteria are trapped as a consequence of thick mucus and poor clearance, not the initial cause."
+      },
+      {
+        "answer": "The cilia are missing in cystic fibrosis",
+        "correct": false,
+        "feedback": "The cilia are present but cannot work in a collapsed periciliary layer under thick mucus."
+      }
+    ]
+  }
+]

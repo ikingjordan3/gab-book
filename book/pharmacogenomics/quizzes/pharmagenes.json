@@ -1,0 +1,80 @@
+[
+  {
+    "question": "What is a star allele?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "A named haplotype of a pharmacogene - a combination of variants carried on one copy of the gene",
+        "correct": true,
+        "feedback": "Right. *1 is the reference haplotype by convention, and each numbered allele is defined by the variants carried together."
+      },
+      {
+        "answer": "A single SNP with a large effect on drug response",
+        "correct": false,
+        "feedback": "A star allele is a haplotype. It usually carries many variants, of which one or a few alter function."
+      },
+      {
+        "answer": "A diplotype - the pair of alleles a person carries",
+        "correct": false,
+        "feedback": "The diplotype is the pair, written for example CYP2C19*1/*2. A star allele is one member of that pair."
+      },
+      {
+        "answer": "A metabolizer phenotype such as 'poor metabolizer'",
+        "correct": false,
+        "feedback": "The phenotype is derived from the diplotype. The star allele is the haplotype itself."
+      }
+    ]
+  },
+  {
+    "question": "A person is CYP2C19*1/*2: one normal function allele and one no function allele. What is their likely metabolizer phenotype?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Intermediate metabolizer",
+        "correct": true,
+        "feedback": "Right. A normal function allele combined with a no function allele gives decreased activity, between normal and poor."
+      },
+      {
+        "answer": "Normal metabolizer",
+        "correct": false,
+        "feedback": "Two normal function alleles, or a normal plus a decreased function allele, would give normal. Here one allele has no function at all."
+      },
+      {
+        "answer": "Poor metabolizer",
+        "correct": false,
+        "feedback": "Poor metabolizer needs two no function or decreased function alleles. This person still has one fully functional copy."
+      },
+      {
+        "answer": "Ultrarapid metabolizer",
+        "correct": false,
+        "feedback": "That requires increased function alleles, such as CYP2C19*17/*17."
+      }
+    ]
+  },
+  {
+    "question": "An enzyme activates a prodrug. What is the risk for a poor metabolizer of that enzyme?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Treatment failure, because too little active drug is produced",
+        "correct": true,
+        "feedback": "Right. For a prodrug the picture reverses: the poor metabolizer cannot generate the active compound. Clopidogrel and CYP2C19 is the classic example."
+      },
+      {
+        "answer": "Toxicity, because the drug accumulates",
+        "correct": false,
+        "feedback": "That is the risk when the enzyme inactivates the drug. For a prodrug, poor metabolism means too little active compound, not too much."
+      },
+      {
+        "answer": "No effect, because prodrugs do not depend on metabolism",
+        "correct": false,
+        "feedback": "A prodrug depends entirely on metabolism: it is inactive until the enzyme converts it."
+      },
+      {
+        "answer": "The same risk as an ultrarapid metabolizer",
+        "correct": false,
+        "feedback": "The two are opposites. For a prodrug an ultrarapid metabolizer generates active compound quickly, a poor metabolizer barely at all."
+      }
+    ]
+  }
+]

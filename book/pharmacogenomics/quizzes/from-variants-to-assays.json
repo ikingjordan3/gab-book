@@ -1,0 +1,54 @@
+[
+  {
+    "question": "Why can an allele-specific PCR assay replace sequencing in this setting?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Once you know which variants matter in a population, only those need to be typed",
+        "correct": true,
+        "feedback": "Right. That is what population-guided pharmacogenomics buys you: a short, cheap, targeted test."
+      },
+      {
+        "answer": "PCR is more accurate than sequencing",
+        "correct": false,
+        "feedback": "Sequencing was the reference standard here. PCR was validated against it, reaching 97.7% to 100% concordance."
+      },
+      {
+        "answer": "Sequencing cannot detect these variants",
+        "correct": false,
+        "feedback": "It can - the exome genotypes are exactly what the assay was checked against."
+      },
+      {
+        "answer": "The variants are too common to need sequencing",
+        "correct": false,
+        "feedback": "Frequency is not the reason. The reason is that the relevant variant list is short and known in advance."
+      }
+    ]
+  },
+  {
+    "question": "The chapter closes by saying the evidence and the argument should be separated. Which of these is the argument rather than the evidence?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "That closing the genomics research gap would help genomic medicine work for everyone",
+        "correct": true,
+        "feedback": "Right. It follows from the findings, but it is a claim about what we should do, not a measurement."
+      },
+      {
+        "answer": "That pharmacogenomic allele frequencies differ between Antioquia and Chocó",
+        "correct": false,
+        "feedback": "That is a measured result, reported in Table 1 of the paper."
+      },
+      {
+        "answer": "That European-derived polygenic scores lose accuracy in other populations",
+        "correct": false,
+        "feedback": "That is an empirical finding, from Martin et al. (2019)."
+      },
+      {
+        "answer": "That allele-specific PCR calls agreed with exome genotypes 97.7% to 100% of the time",
+        "correct": false,
+        "feedback": "That is a validation result from the study."
+      }
+    ]
+  }
+]

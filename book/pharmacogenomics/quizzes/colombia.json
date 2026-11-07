@@ -1,0 +1,54 @@
+[
+  {
+    "question": "Why does the Colombian comparison use 155 pharmaSNPs rather than all 1,995?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "155 is the clinically actionable subset, at PharmGKB evidence levels 1 and 2",
+        "correct": true,
+        "feedback": "Right. The broad set supports genome-wide statistics; the strict set answers 'would this change a prescription?'"
+      },
+      {
+        "answer": "The other variants were not genotyped in the Colombian cohorts",
+        "correct": false,
+        "feedback": "The restriction is by evidence level, not by genotyping coverage."
+      },
+      {
+        "answer": "155 variants is all that PharmGKB contained",
+        "correct": false,
+        "feedback": "PharmGKB yielded 1,995 variants across levels 1 to 4. The 155 are the strongest-evidence subset."
+      },
+      {
+        "answer": "The remainder were not polymorphic in Colombia",
+        "correct": false,
+        "feedback": "The subsetting is by strength of evidence, before any frequency comparison."
+      }
+    ]
+  },
+  {
+    "question": "What is a pharmaSNP, as the term is used in this study?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "A variant with a curated clinical annotation linking it to a drug and an aspect of response",
+        "correct": true,
+        "feedback": "Right - efficacy, dosage or toxicity, from PharmGKB."
+      },
+      {
+        "answer": "Any SNP found in a pharmacogene",
+        "correct": false,
+        "feedback": "Most variants in a pharmacogene have no annotated effect on drug response. The annotation is what defines a pharmaSNP."
+      },
+      {
+        "answer": "A SNP that differs in frequency between populations",
+        "correct": false,
+        "feedback": "That is a result of the study, not the definition. PharmaSNPs are defined by their drug-response annotation."
+      },
+      {
+        "answer": "A variant discovered in a pharmacogenomic GWAS",
+        "correct": false,
+        "feedback": "The annotations come from curated clinical evidence of several kinds, not from one study design."
+      }
+    ]
+  }
+]

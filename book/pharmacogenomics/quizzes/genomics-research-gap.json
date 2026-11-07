@@ -1,0 +1,83 @@
+[
+  {
+    "question": "In 2016, what percentage of GWAS participants were of European ancestry? (Give a whole number and press Enter.)",
+    "type": "numeric",
+    "precision": 2,
+    "answers": [
+      {
+        "type": "value",
+        "value": 81,
+        "correct": true,
+        "feedback": "Right. 81% in 2016, down from 96% in 2009 - real progress, but still far from representative."
+      },
+      {
+        "type": "value",
+        "value": 96,
+        "correct": false,
+        "feedback": "That was the 2009 figure. By 2016 it had fallen to 81%."
+      },
+      {
+        "type": "value",
+        "value": 19,
+        "correct": false,
+        "feedback": "19% is the non-European share in 2016. The European share was 81%."
+      },
+      {
+        "type": "default",
+        "feedback": "Look at the 2016 bar: European ancestry participants were 81% of samples."
+      }
+    ]
+  },
+  {
+    "question": "Between 2009 and 2016 the number of GWAS samples grew about twentyfold. What happened to the representation gap?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "The European share fell, but the absolute shortfall for other populations grew",
+        "correct": true,
+        "feedback": "Right. A falling percentage of a much larger total can still mean a wider absolute gap."
+      },
+      {
+        "answer": "The gap closed almost entirely",
+        "correct": false,
+        "feedback": "European-ancestry participants still made up 81% of samples in 2016."
+      },
+      {
+        "answer": "Representation got worse in percentage terms",
+        "correct": false,
+        "feedback": "In percentage terms it improved, from 96% to 81%. The point is that the absolute shortfall grew anyway."
+      },
+      {
+        "answer": "Native peoples gained the most",
+        "correct": false,
+        "feedback": "Native peoples showed no increase at all. Almost all the improvement came from Asian-ancestry cohorts."
+      }
+    ]
+  },
+  {
+    "question": "Why do polygenic risk scores built in European cohorts lose accuracy in other populations?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Tag SNPs and their linkage disequilibrium with causal variants are population-specific",
+        "correct": true,
+        "feedback": "Right. Accuracy falls roughly with genetic distance from the discovery cohort, so scores perform worst in African-ancestry individuals."
+      },
+      {
+        "answer": "Other populations have no genetic contribution to the trait",
+        "correct": false,
+        "feedback": "The genetic contribution exists. What does not transfer is the particular set of tag SNPs and weights."
+      },
+      {
+        "answer": "The scores are calculated incorrectly outside Europe",
+        "correct": false,
+        "feedback": "The arithmetic is the same. The problem is in the base data the weights came from."
+      },
+      {
+        "answer": "Other populations have fewer SNPs in their genomes",
+        "correct": false,
+        "feedback": "African populations in particular carry more genetic diversity, not less."
+      }
+    ]
+  }
+]

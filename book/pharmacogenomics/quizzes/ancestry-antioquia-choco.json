@@ -1,0 +1,54 @@
+[
+  {
+    "question": "How do Antioquia and Chocó differ in genetic ancestry?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Antioquia is roughly three-quarters European; Chocó is roughly three-quarters African",
+        "correct": true,
+        "feedback": "Right. Both are three-way admixed, but in very different proportions, reflecting different colonial histories."
+      },
+      {
+        "answer": "Antioquia is unmixed European and Chocó unmixed African",
+        "correct": false,
+        "feedback": "Both are admixed: three-way mixtures of African, European and Native American ancestry."
+      },
+      {
+        "answer": "They have essentially the same ancestry composition",
+        "correct": false,
+        "feedback": "They are adjacent departments with sharply different genomes - which is the point of comparing them."
+      },
+      {
+        "answer": "Both are predominantly Native American",
+        "correct": false,
+        "feedback": "Native American ancestry is present in both, but it is the largest component in neither."
+      }
+    ]
+  },
+  {
+    "question": "Why does admixture make these cohorts useful for linking variants to ancestry?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Individuals within one cohort differ in ancestry fraction, so genotype can be tested against ancestry within the population",
+        "correct": true,
+        "feedback": "Right. That is the logic behind the ancestry association panels, and behind admixture mapping."
+      },
+      {
+        "answer": "Admixed populations have more variants overall",
+        "correct": false,
+        "feedback": "The useful feature is variation in ancestry fraction between individuals, not a larger variant count."
+      },
+      {
+        "answer": "Admixture removes population structure",
+        "correct": false,
+        "feedback": "It creates structure within the cohort - which is exactly what makes the within-population test possible."
+      },
+      {
+        "answer": "Admixed populations are easier to genotype",
+        "correct": false,
+        "feedback": "Genotyping is no different. The advantage is analytical."
+      }
+    ]
+  }
+]

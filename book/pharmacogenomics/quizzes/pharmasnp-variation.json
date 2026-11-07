@@ -1,0 +1,80 @@
+[
+  {
+    "question": "Two populations have allele frequencies of 0.5 and 0.4 at a SNP. What does the resulting F_ST of 0.01 tell you?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Almost all the variation at that SNP is within populations, not between them",
+        "correct": true,
+        "feedback": "Right. Knowing which population someone came from tells you very little about their genotype at this SNP."
+      },
+      {
+        "answer": "The two populations are completely different at that SNP",
+        "correct": false,
+        "feedback": "That would give F_ST near 1. At 0.01 the populations are nearly indistinguishable at this SNP."
+      },
+      {
+        "answer": "The SNP is not polymorphic",
+        "correct": false,
+        "feedback": "Both populations are polymorphic - the frequencies are 0.5 and 0.4. They are simply similar."
+      },
+      {
+        "answer": "The SNP has no effect on drug response",
+        "correct": false,
+        "feedback": "F_ST measures how variation is partitioned between populations. It says nothing about function."
+      }
+    ]
+  },
+  {
+    "question": "PharmaSNPs have an average minor allele frequency of 0.25 against 0.02 for genome-wide SNPs. Why should this difference be interpreted cautiously?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Ascertainment: variants get clinical annotations partly because they are common enough to study",
+        "correct": true,
+        "feedback": "Right. The set is enriched for common variants by construction. The F_ST result is the one that still holds conditional on being common."
+      },
+      {
+        "answer": "The two sets were measured in different populations",
+        "correct": false,
+        "feedback": "Both were measured across the same 26 populations."
+      },
+      {
+        "answer": "Minor allele frequency is not comparable between SNP sets",
+        "correct": false,
+        "feedback": "It is comparable; the caution is about how the pharmaSNP set was assembled."
+      },
+      {
+        "answer": "The sample size for pharmaSNPs was too small",
+        "correct": false,
+        "feedback": "1,995 variants is ample for an average. The issue is selection, not sample size."
+      }
+    ]
+  },
+  {
+    "question": "Fewer than 2,000 pharmaSNPs reproduce the same population structure as 28 million genome-wide SNPs. What follows?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Pharmacogenomic variation is structured by ancestry, and a small pharmaSNP panel carries ancestry information",
+        "correct": true,
+        "feedback": "Right - which matters for interpretation, and for privacy."
+      },
+      {
+        "answer": "PharmaSNPs can replace genome-wide SNPs for all purposes",
+        "correct": false,
+        "feedback": "They recapitulate population structure; that does not make them a general-purpose substitute."
+      },
+      {
+        "answer": "Population structure is an artefact of using too many SNPs",
+        "correct": false,
+        "feedback": "The structure appears with both marker sets, which is evidence that it is real."
+      },
+      {
+        "answer": "Ancestry has no bearing on drug response",
+        "correct": false,
+        "feedback": "The opposite: pharmacogenomic variation tracks ancestry, which is why guidelines may not transfer between populations."
+      }
+    ]
+  }
+]

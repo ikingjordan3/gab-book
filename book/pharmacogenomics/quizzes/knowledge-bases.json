@@ -1,0 +1,80 @@
+[
+  {
+    "question": "What does a CPIC guideline tell a clinician?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "What to do when a genotype result already exists",
+        "correct": true,
+        "feedback": "Right. CPIC deliberately does not advise whether to order a test; it covers genotype to phenotype to recommendation."
+      },
+      {
+        "answer": "Whether a patient should be genotyped",
+        "correct": false,
+        "feedback": "CPIC leaves that decision alone. Its guidelines start from a result that already exists, which is what made them usable."
+      },
+      {
+        "answer": "Which drugs a hospital should stock",
+        "correct": false,
+        "feedback": "That is a formulary decision. CPIC guidelines are about interpreting a genotype for prescribing."
+      },
+      {
+        "answer": "How to run a pharmacogenomic assay in the laboratory",
+        "correct": false,
+        "feedback": "The guidelines are about interpretation, not laboratory protocol."
+      }
+    ]
+  },
+  {
+    "question": "Why did CPIC standardize terms such as 'normal metabolizer' in 2017?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Different laboratories used different terms for the same diplotype, and 'extensive' was misread as unusual",
+        "correct": true,
+        "feedback": "Right. Standard terms are what let a laboratory report and a guideline table line up."
+      },
+      {
+        "answer": "The old terms were too technical for clinicians",
+        "correct": false,
+        "feedback": "The problem was inconsistency and misreading, not technicality. 'Extensive metabolizer' was being read as unusual rather than typical."
+      },
+      {
+        "answer": "New sequencing technology required new terms",
+        "correct": false,
+        "feedback": "The terms describe enzyme activity, not the technology used to measure genotype."
+      },
+      {
+        "answer": "The terms needed to match drug names",
+        "correct": false,
+        "feedback": "The point of the terms is that they are the same for every drug-metabolizing enzyme."
+      }
+    ]
+  },
+  {
+    "question": "A study wants only the pharmacogenomic variants a clinician could act on today. Which PharmGKB evidence levels should it use?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Levels 1 and 2",
+        "correct": true,
+        "feedback": "Right. Levels 1 and 2 are the clinically actionable subset; in the Colombian study that is 155 variants out of 1,995."
+      },
+      {
+        "answer": "Levels 1 to 4",
+        "correct": false,
+        "feedback": "That is the broad set, large enough for genome-wide statistics but including preliminary annotations."
+      },
+      {
+        "answer": "Level 4 only",
+        "correct": false,
+        "feedback": "Level 4 is preliminary evidence - the weakest, not the strongest."
+      },
+      {
+        "answer": "All annotated variants regardless of level",
+        "correct": false,
+        "feedback": "The levels exist precisely so that annotations of different strength can be separated."
+      }
+    ]
+  }
+]
