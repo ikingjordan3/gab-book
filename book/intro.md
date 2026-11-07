@@ -1,6 +1,6 @@
-# Genomics & Applied Bioinformatics
+# Computing the Human Genome
 
-<p class="book-subtitle">Computing the Human Genome</p>
+<p class="book-subtitle">An Applied Bioinformatics Primer</p>
 
 This is the companion book for the **Genomics & Applied Bioinformatics** (BIOS 4150 / BIOL 6150) course that I teach
 at Georgia Tech. The course provides a practical introduction to concepts and methods in computational genomics,

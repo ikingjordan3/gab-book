@@ -1,6 +1,6 @@
-<img src="book/images/logo.png" alt="Genomics & Applied Bioinformatics logo" width="160" align="right">
+<img src="book/images/logo.png" alt="Computing the Human Genome logo" width="160" align="right">
 
-# Genomics & Applied Bioinformatics — companion book
+# Computing the Human Genome — An Applied Bioinformatics Primer
 
 The companion book for the Georgia Tech course **Genomics & Applied Bioinformatics**.
 Each chapter pairs two lectures with short modules, self-check quizzes and a hands-on lab notebook

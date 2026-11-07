@@ -27,7 +27,7 @@ def frame(ax):
 
 
 def text(ax):
-    ax.text(0, -0.43, "Genomics & Applied\nBioinformatics", ha="center", va="center", fontsize=16.5,
+    ax.text(0, -0.43, "Computing the\nHuman Genome", ha="center", va="center", fontsize=19,
             fontweight="bold", color=DARK, zorder=6, linespacing=1.15)
 
 
