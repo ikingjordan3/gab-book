@@ -8,8 +8,9 @@ using the human genome as a working model. Chapters follow the course structure,
 transformed into content modules using Claude.ai.
 
 *Applied bioinformatics* entails the use of programming, software, and workflows to answer biological questions via
-the analysis of data. Where theoretical bioinformatics develops new algorithms, applied bioinformatics puts established
-tools to work. At its core, applied bioinformatics is about transforming information into actionable knowledge.
+data analysis. Where theoretical bioinformatics develops new algorithms, applied bioinformatics puts established tools
+to work. At its core, applied bioinformatics is about transforming raw information (data) into actionable knowledge —
+the theme of this book.
 
 Each chapter covers a weekly concept and has three parts:
 
