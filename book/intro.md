@@ -7,9 +7,9 @@ at Georgia Tech. The course provides a practical introduction to concepts and me
 using the human genome as a working model. Chapters follow the course structure, with lecture notes and slides
 transformed into content modules using Claude.ai.
 
-*Applied bioinformatics* is the use of existing software, programming languages and analysis workflows to answer
-concrete biological questions with real genomic data. Where theoretical bioinformatics develops new algorithms,
-applied bioinformatics puts established tools to work, and that is the focus of this book.
+*Applied bioinformatics* entails the use of programming, software, and workflows to answer biological questions via
+the analysis of data. Where theoretical bioinformatics develops new algorithms, applied bioinformatics puts established
+tools to work. At its core, applied bioinformatics is about transforming information into actionable knowledge.
 
 Each chapter covers a weekly concept and has three parts:
 
