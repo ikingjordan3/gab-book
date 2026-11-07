@@ -85,7 +85,7 @@ ancestry information, which matters for privacy as much as for interpretation.
 Now the clinically actionable set: the 155 pharmaSNPs at PharmGKB evidence levels 1–2.
 
 ```{figure} images/colombia_pharmasnps.png
-:alt: Effect allele frequency in Antioquia and Chocó for twelve ancestry-associated pharmaSNPs. Variants such as rs7793837 (salbutamol efficacy) and rs11615 (platin toxicity) are far more frequent in Antioquia; rs2740574 (tacrolimus metabolism), rs6977820 (antipsychotic drug toxicity) and rs11212617 (metformin efficacy) are far more frequent in Chocó.
+:alt: Effect allele frequency in Antioquia and Chocó for thirteen ancestry-associated pharmaSNPs. Variants such as rs776746 (tacrolimus metabolism), rs7793837 (salbutamol efficacy) and rs11615 (platin toxicity) are far more frequent in Antioquia; rs2740574 (tacrolimus metabolism), rs6977820 (antipsychotic drug toxicity) and rs11212617 (metformin efficacy) are far more frequent in Chocó.
 :width: 100%
 
 Effect allele frequencies for ancestry-associated pharmaSNPs in the two Colombian populations. Redrawn
@@ -101,6 +101,29 @@ The differences are large and they run in both directions. Some are drugs prescr
   {doc}`../polygenic-risk-scores/index`.
 - **rs2740574** (tacrolimus metabolism) is more frequent in Chocó. Tacrolimus dosing matters for
   transplant patients, where errors are dangerous.
+
+```{admonition} Which allele is being counted?
+:class: warning
+Read the axis label carefully: this is the frequency of the **effect allele** — the allele the annotation
+is written against — which is not always the allele that carries clinical risk. It is the same
+distinction as effect allele versus risk allele in {doc}`../polygenic-risk-scores/prs-defined`, and
+rs776746 shows why it matters.
+
+At rs776746 (chr7:99,672,916, GRCh38) the reference allele is T and the alternate is C. In transcript
+notation the change is c.219-237A>G — the classic 6986A>G that defines ***CYP3A5\*3***, a splice-defect
+allele whose carriers do not express functional CYP3A5. The figure plots the effect allele C (= `*3`) at
+0.81 in Antioquia and 0.32 in Chocó, which matches gnomAD: 0.79 in Admixed American and 0.29 in
+African/African American samples.
+
+Flip the allele and the sentence flips with it. The complementary T allele (= `*1`, the expresser) is at
+0.68 in Chocó and 0.19 in Antioquia — which is why the source paper's text describes this variant as
+being at higher frequency in **Chocó** while its table shows 0.81 for **Antioquia**. Both statements are
+correct; they count different alleles.
+
+The clinical direction follows the expresser allele: patients who express CYP3A5 clear tacrolimus faster
+and need **higher** doses to reach the same blood concentration. CYP3A5 expressers are more common in
+African-ancestry populations, so this is a real dosing difference, not a bookkeeping curiosity.
+```
 
 ## The differences track ancestry
 
