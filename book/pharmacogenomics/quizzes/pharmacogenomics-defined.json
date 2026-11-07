@@ -1,0 +1,80 @@
+[
+  {
+    "question": "Why do pharmacogenomic variants sit in the corner of the frequency x effect-size spectrum that is nearly empty for disease risk?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "They are common and still have large effects on drug response",
+        "correct": true,
+        "feedback": "Right. No-function alleles of CYP2D6, CYP2C19 and SLCO1B1 reach a few percent to twenty percent and still change drug exposure several-fold."
+      },
+      {
+        "answer": "They are rare and have large effects",
+        "correct": false,
+        "feedback": "That is the Mendelian disease corner, at top left. Pharmacogenomic variants are common."
+      },
+      {
+        "answer": "They are common and have small effects",
+        "correct": false,
+        "feedback": "That describes the variants found by GWAS for complex disease. Pharmacogenomic effects on drug response are large."
+      },
+      {
+        "answer": "They are rare and have small effects",
+        "correct": false,
+        "feedback": "That is the bottom-left corner, where variants are very hard to identify genetically."
+      }
+    ]
+  },
+  {
+    "question": "A variant slows the liver enzyme that clears a drug, so the drug accumulates in the blood. Is this pharmacokinetic or pharmacodynamic?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Pharmacokinetic: it changes drug exposure",
+        "correct": true,
+        "feedback": "Right. Pharmacokinetics is what the body does to the drug - absorption, distribution, metabolism and elimination."
+      },
+      {
+        "answer": "Pharmacodynamic: it changes the drug's effect",
+        "correct": false,
+        "feedback": "Pharmacodynamics covers variants in the drug's target. Here the target is untouched; only the concentration changes."
+      },
+      {
+        "answer": "Both equally",
+        "correct": false,
+        "feedback": "The distinction is where the variant acts. This one acts on clearance, so on exposure: pharmacokinetic."
+      },
+      {
+        "answer": "Neither; it is a pharmacological effect, not a genetic one",
+        "correct": false,
+        "feedback": "The change in clearance is caused by a genetic variant, which is what makes it pharmacogenomic."
+      }
+    ]
+  },
+  {
+    "question": "In the pharmacogenomics paradigm figure, what does genotyping add?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "It identifies in advance which response group a patient belongs to",
+        "correct": true,
+        "feedback": "Right. The groups exist before anyone is treated; genotyping tells them apart beforehand rather than from the outcome."
+      },
+      {
+        "answer": "It creates the response groups",
+        "correct": false,
+        "feedback": "The groups are already there, mixed through the starting population. Genotyping only reveals them."
+      },
+      {
+        "answer": "It guarantees that every patient responds",
+        "correct": false,
+        "feedback": "It cannot change who responds. It predicts who will, so that non-responders and at-risk patients can be treated differently."
+      },
+      {
+        "answer": "It makes the drug more effective in everyone",
+        "correct": false,
+        "feedback": "The drug's pharmacology is unchanged. What changes is who receives it, and at what dose."
+      }
+    ]
+  }
+]

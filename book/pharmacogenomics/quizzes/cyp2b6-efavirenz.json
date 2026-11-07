@@ -1,0 +1,80 @@
+[
+  {
+    "question": "A patient is a CYP2B6 poor metabolizer starting efavirenz. What does the CPIC guideline recommend?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Consider starting at a decreased dose of 400 or 200 mg/day",
+        "correct": true,
+        "feedback": "Right. The drug still works; the lower dose reaches the exposure a normal metabolizer gets on 600 mg."
+      },
+      {
+        "answer": "Avoid efavirenz entirely",
+        "correct": false,
+        "feedback": "The recommendation is a lower starting dose, not avoidance. Compare ivacaftor, where genotype does decide whether to prescribe."
+      },
+      {
+        "answer": "Start at the standard 600 mg/day and monitor",
+        "correct": false,
+        "feedback": "Standard dosing is recommended for normal, rapid and ultrarapid metabolizers. A poor metabolizer is over-exposed at that dose."
+      },
+      {
+        "answer": "Increase the dose to overcome slow metabolism",
+        "correct": false,
+        "feedback": "Slow metabolism means the drug accumulates. Raising the dose would increase the risk of CNS adverse effects."
+      }
+    ]
+  },
+  {
+    "question": "Why is efavirenz a pharmacokinetic rather than a pharmacodynamic example?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "The variant is in the enzyme that clears the drug, so it changes drug exposure",
+        "correct": true,
+        "feedback": "Right. CYP2B6 hydroxylates efavirenz; a no-function allele slows clearance and raises plasma concentration."
+      },
+      {
+        "answer": "The variant is in efavirenz's viral target",
+        "correct": false,
+        "feedback": "Efavirenz inhibits reverse transcriptase, a viral enzyme. The variant is in the patient's own CYP2B6."
+      },
+      {
+        "answer": "Efavirenz has no target in the body",
+        "correct": false,
+        "feedback": "It has a target - viral reverse transcriptase. The pharmacogenomic variant simply is not in it."
+      },
+      {
+        "answer": "The variant changes how the drug binds its target",
+        "correct": false,
+        "feedback": "That would be pharmacodynamics. Here the binding is unchanged; the concentration is not."
+      }
+    ]
+  },
+  {
+    "question": "What went wrong when Zimbabwe switched to an efavirenz-containing regimen in 2015?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "A regimen was allocated to a population without its pharmacogenomic allele frequencies in view",
+        "correct": true,
+        "feedback": "Right. CYP2B6 no-function alleles are common in the population, so many patients were over-exposed at the standard dose and stopped treatment."
+      },
+      {
+        "answer": "The drug turned out not to work against HIV",
+        "correct": false,
+        "feedback": "Efavirenz is effective. The problem was exposure at the standard dose in patients who clear it slowly."
+      },
+      {
+        "answer": "The pharmacogenomic science had not been done yet",
+        "correct": false,
+        "feedback": "The variant's effect had been shown years earlier. The science existed; it was not used in the policy decision."
+      },
+      {
+        "answer": "The regimen was more expensive than the three-drug cocktail",
+        "correct": false,
+        "feedback": "It was cheaper and simpler, which is why it was chosen. The cost was clinical, not financial."
+      }
+    ]
+  }
+]
